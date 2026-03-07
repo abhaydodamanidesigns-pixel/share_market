@@ -27,17 +27,17 @@ export default function CompliancePage({
   return (
     <>
       {/* Page header */}
-      <section className="gradient-navy text-white pt-28 pb-12">
+      <section className="gradient-navy text-ink pt-28 pb-12">
         <div className="container-base">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">
+          <h1 className="text-3xl md:text-4xl font-bold text-ink mb-3">
             Compliance &amp; Disclosures
           </h1>
-          <p className="text-navy-200 text-lg max-w-2xl leading-relaxed">
+          <p className="text-ink-dim text-lg max-w-2xl leading-relaxed">
             Saarthi Finance is committed to full regulatory compliance and
             transparent disclosure. This page contains all required regulatory
             information, risk disclosures, and our policies.
           </p>
-          <p className="text-navy-400 text-sm mt-4">
+          <p className="text-ink-muted text-sm mt-4">
             Last updated: November 2024
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function CompliancePage({
             aria-label="Compliance sections navigation"
           >
             <nav className="sticky top-24">
-              <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-3">
+              <p className="text-xs font-bold text-ink-muted uppercase tracking-wider mb-3">
                 On This Page
               </p>
               <ul className="space-y-1.5" role="list">
@@ -59,7 +59,7 @@ export default function CompliancePage({
                   <li key={id}>
                     <a
                       href={`#${id}`}
-                      className="block text-sm text-gray-600 hover:text-navy-900 py-1 border-l-2 border-transparent hover:border-navy-300 pl-3 transition-all"
+                      className="block text-sm text-ink-dim hover:text-ink py-1 border-l-2 border-transparent hover:border-brand pl-3 transition-all"
                     >
                       {label}
                     </a>
@@ -76,40 +76,40 @@ export default function CompliancePage({
           >
             {/* ── SEBI Disclosures ── */}
             <article id="sebi" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 SEBI Disclosures
               </h2>
 
-              <div className="bg-navy-50 border border-navy-100 rounded-2xl p-5 mb-5">
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-5 mb-5">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">SEBI Registration Number</p>
-                    <p className="font-bold text-navy-900">INA000XXXXXX</p>
+                    <p className="text-xs text-ink-muted mb-0.5">SEBI Registration Number</p>
+                    <p className="font-bold text-ink">INA000XXXXXX</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">Registration Type</p>
-                    <p className="font-bold text-navy-900">Individual / Non-Individual</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Registration Type</p>
+                    <p className="font-bold text-ink">Individual / Non-Individual</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">Valid Till</p>
-                    <p className="font-bold text-navy-900">Perpetual (post 2020)</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Valid Till</p>
+                    <p className="font-bold text-ink">Perpetual (post 2020)</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">Registered Name</p>
-                    <p className="font-bold text-navy-900">Saarthi Finance Advisory LLP</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Registered Name</p>
+                    <p className="font-bold text-ink">Saarthi Finance Advisory LLP</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">AMFI ARN</p>
-                    <p className="font-bold text-navy-900">XXXXXXX</p>
+                    <p className="text-xs text-ink-muted mb-0.5">AMFI ARN</p>
+                    <p className="font-bold text-ink">XXXXXXX</p>
                   </div>
                   <div>
-                    <p className="text-xs text-gray-500 mb-0.5">Registered Address</p>
-                    <p className="font-bold text-navy-900">Mumbai, Maharashtra</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Registered Address</p>
+                    <p className="font-bold text-ink">Mumbai, Maharashtra</p>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Saarthi Finance Advisory LLP is registered with the Securities and
                   Exchange Board of India (SEBI) as a Registered Investment Adviser
@@ -119,7 +119,7 @@ export default function CompliancePage({
                     href="https://www.sebi.gov.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-navy-700 underline"
+                    className="text-brand underline"
                   >
                     www.sebi.gov.in
                   </a>
@@ -140,7 +140,7 @@ export default function CompliancePage({
                   not indicative of future results.
                 </p>
                 <p>
-                  <strong>Applicable Regulation:</strong> SEBI (Investment Advisers)
+                  <strong className="text-ink">Applicable Regulation:</strong> SEBI (Investment Advisers)
                   Regulations, 2013; SEBI Circular No. SEBI/HO/IMD/DF1/CIR/P/2020/182
                   dated September 23, 2020, and subsequent circulars.
                 </p>
@@ -149,10 +149,10 @@ export default function CompliancePage({
 
             {/* ── IRDAI & Insurance ── */}
             <article id="irdai" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 IRDAI &amp; Insurance Disclosures
               </h2>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Insurance advisory services are facilitated by Saarthi Finance
                   Advisory LLP as an IRDAI-authorised Point of Salesperson (POSP). Our
@@ -160,7 +160,7 @@ export default function CompliancePage({
                   general insurance products from registered insurers under IRDAI.
                 </p>
                 <p>
-                  <strong>Important:</strong> Insurance is a subject matter of
+                  <strong className="text-ink">Important:</strong> Insurance is a subject matter of
                   solicitation. Buying an insurance policy is purely voluntary. All
                   policy documents must be read carefully before purchase. For IRDAI
                   Bima Sugam (insurance portal) and related services, visit{" "}
@@ -168,7 +168,7 @@ export default function CompliancePage({
                     href="https://www.irdai.gov.in"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-navy-700 underline"
+                    className="text-brand underline"
                   >
                     www.irdai.gov.in
                   </a>
@@ -184,16 +184,16 @@ export default function CompliancePage({
 
             {/* ── Risk Disclosures ── */}
             <article id="risks" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 Risk Disclosures
               </h2>
-              <div className="bg-amber-50 border border-amber-200 rounded-2xl p-5 mb-5 text-sm text-amber-900 leading-relaxed">
+              <div className="bg-dark-card border border-dark-border rounded-2xl p-5 mb-5 text-sm text-trade-warn leading-relaxed">
                 <strong>Standard Risk Warning:</strong> Investment in securities
                 market is subject to market risks. Read all related documents
                 carefully before investing. Past performance is not an indicator of
                 future returns. There is no assurance or guarantee of returns.
               </div>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Mutual fund investments are subject to market risks. NAV of schemes
                   fluctuates based on market conditions. Investors may receive less than
@@ -219,17 +219,17 @@ export default function CompliancePage({
 
             {/* ── Fee Disclosures ── */}
             <article id="fees" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 Fee Disclosures
               </h2>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Saarthi Finance operates on a fee-only advisory model. Fees are
                   charged directly to clients and disclosed upfront in the Investment
                   Advisory Agreement prior to commencement of services.
                 </p>
                 <p>
-                  <strong>Fee Structure:</strong> Advisory fees are structured as either
+                  <strong className="text-ink">Fee Structure:</strong> Advisory fees are structured as either
                   (a) a fixed annual fee per client/family, or (b) a percentage of
                   Assets Under Advisory (AUA), as permitted under SEBI (Investment
                   Advisers) Regulations. The applicable fee will be specified in your
@@ -252,17 +252,17 @@ export default function CompliancePage({
 
             {/* ── Privacy Policy ── */}
             <article id="privacy" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 Privacy Policy
               </h2>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Saarthi Finance Advisory LLP (&ldquo;we&rdquo;, &ldquo;our&rdquo;) is committed to
                   protecting the privacy and confidentiality of your personal
                   information. This policy describes how we collect, use, store, and
                   protect your data.
                 </p>
-                <h3 className="font-semibold text-navy-900 text-base mt-4">
+                <h3 className="font-semibold text-ink text-base mt-4">
                   Information We Collect
                 </h3>
                 <p>
@@ -271,7 +271,7 @@ export default function CompliancePage({
                   contact information. We collect information you provide through our
                   website, consultation forms, and direct communication.
                 </p>
-                <h3 className="font-semibold text-navy-900 text-base mt-4">
+                <h3 className="font-semibold text-ink text-base mt-4">
                   How We Use Your Information
                 </h3>
                 <p>
@@ -280,7 +280,7 @@ export default function CompliancePage({
                   regarding your account and services, and send relevant educational
                   content (with your consent).
                 </p>
-                <h3 className="font-semibold text-navy-900 text-base mt-4">
+                <h3 className="font-semibold text-ink text-base mt-4">
                   Data Protection
                 </h3>
                 <p>
@@ -295,10 +295,10 @@ export default function CompliancePage({
 
             {/* ── Terms of Use ── */}
             <article id="terms" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 Terms of Use
               </h2>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   By accessing and using this website, you agree to the following
                   terms. The content on this website is for informational and
@@ -328,26 +328,26 @@ export default function CompliancePage({
 
             {/* ── Grievance Redressal ── */}
             <article id="grievance" className="scroll-mt-24">
-              <h2 className="text-2xl font-bold text-navy-900 mb-4 pb-3 border-b border-gray-100">
+              <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
                 Grievance Redressal
               </h2>
-              <div className="space-y-4 text-sm text-gray-700 leading-relaxed">
+              <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
                   Saarthi Finance has a structured grievance redressal mechanism.
                   Clients with complaints or concerns are requested to follow the
                   process below:
                 </p>
 
-                <div className="bg-surface-50 rounded-2xl p-5 border border-gray-100 space-y-4">
+                <div className="bg-dark-card rounded-2xl p-5 border border-dark-border space-y-4">
                   <div>
-                    <h3 className="font-semibold text-navy-900 mb-1">
+                    <h3 className="font-semibold text-ink mb-1">
                       Step 1: Contact Us Directly
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-ink-dim">
                       Email:{" "}
                       <a
                         href="mailto:grievance@saarthi-finance.in"
-                        className="text-navy-700 underline"
+                        className="text-brand underline"
                       >
                         grievance@saarthi-finance.in
                       </a>
@@ -357,17 +357,17 @@ export default function CompliancePage({
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy-900 mb-1">
+                    <h3 className="font-semibold text-ink mb-1">
                       Step 2: SEBI SCORES Portal
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-ink-dim">
                       If not resolved satisfactorily, register your complaint
                       on the SEBI SCORES portal:{" "}
                       <a
                         href="https://scores.sebi.gov.in"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-navy-700 underline"
+                        className="text-brand underline"
                       >
                         scores.sebi.gov.in
                       </a>
@@ -376,17 +376,17 @@ export default function CompliancePage({
                     </p>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-navy-900 mb-1">
+                    <h3 className="font-semibold text-ink mb-1">
                       Step 3: SEBI ODR / SMART ODR
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-ink-dim">
                       For dispute resolution, you may also use the Online
                       Dispute Resolution (ODR) platform:{" "}
                       <a
                         href="https://smartodr.in"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-navy-700 underline"
+                        className="text-brand underline"
                       >
                         smartodr.in
                       </a>
@@ -395,12 +395,12 @@ export default function CompliancePage({
                 </div>
 
                 <p>
-                  <strong>Principal Officer for Grievances:</strong><br />
+                  <strong className="text-ink">Principal Officer for Grievances:</strong><br />
                   Name: [Principal Officer Name]<br />
                   Email:{" "}
                   <a
                     href="mailto:grievance@saarthi-finance.in"
-                    className="text-navy-700 underline"
+                    className="text-brand underline"
                   >
                     grievance@saarthi-finance.in
                   </a>
@@ -411,7 +411,7 @@ export default function CompliancePage({
             </article>
 
             {/* Bottom link */}
-            <div className="pt-6 border-t border-gray-100 flex flex-wrap gap-3">
+            <div className="pt-6 border-t border-dark-border flex flex-wrap gap-3">
               <Link href={`/${lang}`} className="btn-secondary text-sm">
                 ← Back to Home
               </Link>

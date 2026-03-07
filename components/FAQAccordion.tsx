@@ -26,7 +26,7 @@ export default function FAQAccordion({
 
   return (
     <section
-      className="section-padding bg-surface-50"
+      className="section-padding bg-dark-surface"
       aria-labelledby="faq-heading"
     >
       <div className="container-base">
@@ -57,10 +57,10 @@ export default function FAQAccordion({
               <div
                 key={idx}
                 role="listitem"
-                className={`bg-white rounded-2xl border transition-shadow ${
+                className={`bg-dark-card rounded-2xl border transition-shadow ${
                   isOpen
-                    ? "border-navy-200 shadow-card"
-                    : "border-gray-100 shadow-sm"
+                    ? "border-brand shadow-card"
+                    : "border-dark-border shadow-sm"
                 }`}
               >
                 {/* Question button */}
@@ -71,18 +71,18 @@ export default function FAQAccordion({
                   onClick={() => toggle(idx)}
                   className="w-full flex items-start justify-between gap-4 text-left px-6 py-4 rounded-2xl group"
                 >
-                  <span className="font-semibold text-navy-900 text-sm md:text-base leading-snug">
+                  <span className="font-semibold text-ink text-sm md:text-base leading-snug">
                     {item.question}
                   </span>
                   {/* Chevron */}
                   <span
                     className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center transition-transform mt-0.5 ${
-                      isOpen ? "bg-navy-900 rotate-180" : "bg-gray-100"
+                      isOpen ? "bg-brand rotate-180" : "bg-dark-elevated"
                     }`}
                     aria-hidden="true"
                   >
                     <svg
-                      className={`w-3.5 h-3.5 ${isOpen ? "text-white" : "text-gray-500"}`}
+                      className={`w-3.5 h-3.5 ${isOpen ? "text-white" : "text-ink-muted"}`}
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -105,7 +105,7 @@ export default function FAQAccordion({
                     aria-labelledby={headingId}
                     className="px-6 pb-5"
                   >
-                    <p className="text-sm text-gray-600 leading-relaxed">
+                    <p className="text-sm text-ink-dim leading-relaxed">
                       {item.answer}
                     </p>
                   </div>

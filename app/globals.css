@@ -2,6 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Semantic color tokens ─────────────────────────────────────────────────
+   Single source of truth for the trading platform color system.
+   Update values here; Tailwind config mirrors them with the same hex codes.
+   ──────────────────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --color-bg-primary:         #0B0F1A;
+  --color-bg-secondary:       #111827;
+  --color-bg-tertiary:        #1A2236;
+
+  /* Surfaces / cards */
+  --color-surface-primary:    #141B2D;
+  --color-surface-secondary:  #1C253A;
+
+  /* Primary brand (trust / action) */
+  --color-primary:            #3B82F6;
+  --color-primary-hover:      #2563EB;
+
+  /* Secondary accent */
+  --color-accent:             #22D3EE;
+
+  /* Trading signals */
+  --color-profit:             #22C55E;
+  --color-loss:               #EF4444;
+  --color-warning:            #F59E0B;
+
+  /* Text */
+  --color-text-primary:       #E5E7EB;
+  --color-text-secondary:     #9CA3AF;
+  --color-text-muted:         #6B7280;
+
+  /* Border / divider */
+  --color-border:             #2A344A;
+
+  /* Chart colours */
+  --chart-candle-green:       #22C55E;
+  --chart-candle-red:         #EF4444;
+  --chart-grid:               #1F2937;
+
+  /* Interaction */
+  --color-focus-ring:         #3B82F6;
+  --color-hover-surface:      #1F2937;
+}
+
 /* ── Base resets & typographic defaults ── */
 @layer base {
   html {
@@ -11,11 +55,11 @@
   }
 
   body {
-    @apply bg-white text-navy-900 font-sans;
+    @apply bg-dark-bg text-ink font-sans;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-navy-900;
+    @apply font-semibold tracking-tight text-ink;
   }
 
   a {
@@ -24,7 +68,7 @@
 
   /* Focus ring for accessibility */
   :focus-visible {
-    @apply outline-none ring-2 ring-gold-500 ring-offset-2;
+    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-dark-bg;
   }
 }
 
@@ -40,12 +84,12 @@
     @apply py-16 md:py-24;
   }
 
-  /* Primary button */
+  /* Primary button — blue (trust / action) */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
-           bg-navy-900 text-white font-semibold
+           bg-brand text-white font-semibold
            px-6 py-3 rounded-xl
-           hover:bg-navy-800 active:bg-navy-950
+           hover:bg-brand-hover active:bg-brand-hover
            transition-all duration-200
            shadow-sm hover:shadow-card;
   }
@@ -53,25 +97,26 @@
   /* Secondary / outline button */
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2
-           border-2 border-navy-900 text-navy-900 font-semibold
+           border-2 border-dark-border text-ink font-semibold
            px-6 py-3 rounded-xl
-           hover:bg-navy-50 active:bg-navy-100
+           hover:bg-dark-hover active:bg-dark-panel
            transition-all duration-200;
   }
 
-  /* Gold accent button */
+  /* Accent button — also blue for primary CTA consistency */
   .btn-accent {
     @apply inline-flex items-center justify-center gap-2
-           bg-gold-500 text-navy-900 font-semibold
+           bg-brand text-white font-semibold
            px-6 py-3 rounded-xl
-           hover:bg-gold-400 active:bg-gold-600
+           hover:bg-brand-hover active:bg-brand-hover
            transition-all duration-200
            shadow-sm hover:shadow-card;
   }
 
   /* Card base */
   .card {
-    @apply bg-white rounded-2xl shadow-card p-6 transition-shadow duration-300 hover:shadow-card-hover;
+    @apply bg-dark-card rounded-2xl border border-dark-border p-6
+           transition-shadow duration-300 hover:shadow-card-hover;
   }
 
   /* Badge / pill */
@@ -81,11 +126,11 @@
 
   /* Section heading */
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-navy-900 tracking-tight;
+    @apply text-3xl md:text-4xl font-bold text-ink tracking-tight;
   }
 
   .section-subheading {
-    @apply text-lg text-gray-600 mt-3 max-w-2xl;
+    @apply text-lg text-ink-dim mt-3 max-w-2xl;
   }
 }
 
@@ -94,20 +139,29 @@
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #f0f2f8;
+  background: #111827; /* dark-surface */
 }
 ::-webkit-scrollbar-thumb {
-  background: #9db2ff;
+  background: #2A344A; /* dark-border */
   border-radius: 3px;
 }
 
 /* ── Gradient helpers ── */
 .gradient-navy {
-  background: linear-gradient(135deg, #0a1640 0%, #0F2557 60%, #1e2ba5 100%);
+  background: linear-gradient(
+    135deg,
+    var(--color-bg-primary)      0%,
+    var(--color-bg-secondary)    60%,
+    var(--color-surface-primary) 100%
+  );
 }
 
 .gradient-surface {
-  background: linear-gradient(180deg, #ffffff 0%, #f0f2f8 100%);
+  background: linear-gradient(
+    180deg,
+    var(--color-bg-secondary) 0%,
+    var(--color-bg-tertiary)  100%
+  );
 }
 
 /* ── Animation utilities ── */
@@ -123,5 +177,16 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes heroTickerPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1px);
   }
 }

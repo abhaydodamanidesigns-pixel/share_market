@@ -14,7 +14,7 @@ export default function NewsletterForm() {
         id="email-input"
         type="email"
         placeholder="your@email.com"
-        className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-navy-300"
+        className="flex-1 px-4 py-3 rounded-xl border border-dark-border bg-dark-card text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand"
         required
         aria-label="Email address for newsletter"
       />

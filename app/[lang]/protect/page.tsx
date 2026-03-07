@@ -38,7 +38,7 @@ export default async function ProtectPage({
 
       {/* Problem statement */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="protect-problem-heading"
       >
         <div className="container-base">
@@ -46,10 +46,10 @@ export default async function ProtectPage({
             <h2 id="protect-problem-heading" className="section-heading mb-4">
               {protect.problem.heading}
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-ink-dim leading-relaxed mb-4">
               {protect.problem.para1}
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-ink-dim leading-relaxed">
               {protect.problem.para2}
             </p>
           </div>
@@ -58,7 +58,7 @@ export default async function ProtectPage({
 
       {/* Insurance types */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="insurance-types-heading"
       >
         <div className="container-base">
@@ -76,16 +76,16 @@ export default async function ProtectPage({
               <div key={title} className="card">
                 <div className="flex items-start gap-4">
                   <span
-                    className="text-3xl bg-amber-50 w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center"
+                    className="text-3xl bg-amber-900/40 w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center"
                     aria-hidden="true"
                   >
                     {icon}
                   </span>
                   <div>
-                    <h3 className="font-semibold text-navy-900 text-lg mb-2">
+                    <h3 className="font-semibold text-ink text-lg mb-2">
                       {title}
                     </h3>
-                    <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                    <p className="text-sm text-ink-dim leading-relaxed mb-3">
                       {description}
                     </p>
                   </div>
@@ -94,10 +94,10 @@ export default async function ProtectPage({
                   {keyPoints.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-2 text-xs text-gray-700"
+                      className="flex items-start gap-2 text-xs text-ink-dim"
                     >
                       <svg
-                        className="w-3.5 h-3.5 text-amber-500 flex-shrink-0 mt-0.5"
+                        className="w-3.5 h-3.5 text-trade-warn flex-shrink-0 mt-0.5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -121,7 +121,7 @@ export default async function ProtectPage({
       </section>
 
       {/* Who this is for */}
-      <section className="section-padding bg-white" aria-labelledby="who-protect-heading">
+      <section className="section-padding bg-dark-surface" aria-labelledby="who-protect-heading">
         <div className="container-base">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -131,24 +131,24 @@ export default async function ProtectPage({
               <div className="space-y-4">
                 {protect.whoNeeds.items.map(({ title, text }) => (
                   <div key={title} className="flex items-start gap-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-amber-400 flex-shrink-0 mt-2" aria-hidden="true" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-trade-warn flex-shrink-0 mt-2" aria-hidden="true" />
                     <div>
-                      <span className="font-semibold text-navy-900 text-sm">{title}:</span>{" "}
-                      <span className="text-sm text-gray-600">{text}</span>
+                      <span className="font-semibold text-ink text-sm">{title}:</span>{" "}
+                      <span className="text-sm text-ink-dim">{text}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <div className="bg-amber-50 rounded-3xl p-8 border border-amber-100">
-              <h3 className="font-bold text-navy-900 text-xl mb-4">
+            <div className="bg-dark-card rounded-3xl p-8 border border-dark-border">
+              <h3 className="font-bold text-ink text-xl mb-4">
                 {protect.whoNeeds.underInsuredBox.heading}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+              <p className="text-ink-dim text-sm leading-relaxed mb-4">
                 {protect.whoNeeds.underInsuredBox.para1}
               </p>
-              <p className="text-gray-600 text-sm leading-relaxed mb-5">
+              <p className="text-ink-dim text-sm leading-relaxed mb-5">
                 {protect.whoNeeds.underInsuredBox.para2}
               </p>
               <Link href={`/${lang}/contact`} className="btn-primary w-full justify-center">
@@ -168,14 +168,14 @@ export default async function ProtectPage({
       />
 
       {/* Crosslinks */}
-      <section className="py-10 bg-surface-50">
+      <section className="py-10 bg-dark-panel">
         <div className="container-base">
           <div className="flex flex-wrap gap-3 justify-center">
-            <span className="text-sm text-gray-500 self-center">{protect.crosslinks.label}</span>
-            <Link href={`/${lang}/invest`} className="badge bg-emerald-50 text-emerald-700 py-1.5 px-4">
+            <span className="text-sm text-ink-muted self-center">{protect.crosslinks.label}</span>
+            <Link href={`/${lang}/invest`} className="badge bg-dark-card text-trade-profit py-1.5 px-4">
               {protect.crosslinks.investment}
             </Link>
-            <Link href={`/${lang}/learn`} className="badge bg-blue-50 text-blue-700 py-1.5 px-4">
+            <Link href={`/${lang}/learn`} className="badge bg-dark-card text-brand py-1.5 px-4">
               {protect.crosslinks.education}
             </Link>
           </div>

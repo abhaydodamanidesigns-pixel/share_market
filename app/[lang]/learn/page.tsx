@@ -13,10 +13,11 @@ export const metadata: Metadata = {
 };
 
 const educationIcons = ["🏦", "📊", "🛡️", "💰", "🏠", "👨‍👩‍👧‍👦", "📜", "🔄"];
+// Difficulty badge colours — dark palette with trading signal text
 const levelColors: Record<string, string> = {
-  Beginner: "bg-emerald-50 text-emerald-700",
-  Intermediate: "bg-amber-50 text-amber-700",
-  Advanced: "bg-rose-50 text-rose-700",
+  Beginner:     "bg-green-900/30 text-trade-profit",
+  Intermediate: "bg-amber-900/30 text-trade-warn",
+  Advanced:     "bg-red-900/30 text-trade-loss",
 };
 
 export default async function LearnPage({
@@ -49,20 +50,20 @@ export default async function LearnPage({
       />
 
       {/* Why financial education matters */}
-      <section className="section-padding bg-white" aria-labelledby="why-learn-heading">
+      <section className="section-padding bg-dark-surface" aria-labelledby="why-learn-heading">
         <div className="container-base">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 id="why-learn-heading" className="section-heading mb-4">
                 {learn.whyHeading}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {learn.whyPara1}
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {learn.whyPara2}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-ink-dim leading-relaxed">
                 {learn.whyPara3}
               </p>
             </div>
@@ -71,10 +72,10 @@ export default async function LearnPage({
               {learn.stats.map(({ number, label }) => (
                 <div
                   key={label}
-                  className="bg-navy-50 rounded-2xl p-6 text-center"
+                  className="bg-dark-card rounded-2xl p-6 text-center border border-dark-border"
                 >
-                  <p className="text-3xl font-bold text-navy-900 mb-1">{number}</p>
-                  <p className="text-sm text-gray-600">{label}</p>
+                  <p className="text-3xl font-bold text-ink mb-1">{number}</p>
+                  <p className="text-sm text-ink-dim">{label}</p>
                 </div>
               ))}
             </div>
@@ -84,7 +85,7 @@ export default async function LearnPage({
 
       {/* Topic grid */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="topics-heading"
       >
         <div className="container-base">
@@ -107,10 +108,10 @@ export default async function LearnPage({
               >
                 <span className="text-3xl mb-3" aria-hidden="true">{icon}</span>
                 <span className={`badge mb-2 ${levelColors[level]}`}>{level}</span>
-                <h3 className="font-semibold text-navy-900 text-sm mb-2 group-hover:text-navy-700 transition-colors">
+                <h3 className="font-semibold text-ink text-sm mb-2 group-hover:text-brand transition-colors">
                   {title}
                 </h3>
-                <p className="text-xs text-gray-600 leading-relaxed flex-1">
+                <p className="text-xs text-ink-dim leading-relaxed flex-1">
                   {description}
                 </p>
               </Link>
@@ -121,7 +122,7 @@ export default async function LearnPage({
 
       {/* Featured articles */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="featured-articles-heading"
       >
         <div className="container-base">

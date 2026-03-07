@@ -7,7 +7,7 @@ interface CTASectionProps {
   ctaHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
-  /** Dark navy background or lighter surface */
+  /** Dark / surface / elevated-card background */
   variant?: "dark" | "light" | "gold";
   /** Optional note below CTAs (e.g. "No commitment. Free first session.") */
   note?: string;
@@ -27,21 +27,21 @@ export default function CTASection({
   const classes = {
     dark: {
       section: "gradient-navy",
-      heading: "text-white",
-      sub: "text-navy-200",
-      note: "text-navy-400",
+      heading: "text-ink",
+      sub:     "text-ink-dim",
+      note:    "text-ink-muted",
     },
     light: {
-      section: "bg-surface-50",
-      heading: "text-navy-900",
-      sub: "text-gray-600",
-      note: "text-gray-400",
+      section: "bg-dark-surface",
+      heading: "text-ink",
+      sub:     "text-ink-dim",
+      note:    "text-ink-muted",
     },
     gold: {
-      section: "bg-gold-50 border-t border-gold-100",
-      heading: "text-navy-900",
-      sub: "text-navy-700",
-      note: "text-navy-400",
+      section: "bg-dark-card border-t border-dark-border",
+      heading: "text-ink",
+      sub:     "text-ink-dim",
+      note:    "text-ink-muted",
     },
   }[variant];
 
@@ -84,9 +84,7 @@ export default function CTASection({
           {secondaryLabel && secondaryHref && (
             <Link
               href={secondaryHref}
-              className={`btn-secondary ${
-                variant === "dark" ? "border-white/30 text-white hover:bg-white/10" : ""
-              }`}
+              className="btn-secondary border-dark-border text-ink hover:bg-dark-hover"
             >
               {secondaryLabel}
             </Link>

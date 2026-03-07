@@ -65,7 +65,7 @@ export default function TrustSection({
 
   return (
     <section
-      className={`section-padding ${isDark ? "gradient-navy text-white" : "bg-surface-50"}`}
+      className={`section-padding ${isDark ? "gradient-navy" : "bg-dark-surface"}`}
       aria-labelledby="trust-section-heading"
     >
       <div className="container-base">
@@ -73,15 +73,11 @@ export default function TrustSection({
         <div className="text-center mb-12">
           <h2
             id="trust-section-heading"
-            className={`section-heading ${isDark ? "text-white" : ""}`}
+            className="section-heading"
           >
             {title}
           </h2>
-          <p
-            className={`section-subheading mx-auto text-center mt-4 ${
-              isDark ? "text-navy-200" : ""
-            }`}
-          >
+          <p className="section-subheading mx-auto text-center mt-4">
             {subtitle}
           </p>
         </div>
@@ -96,11 +92,7 @@ export default function TrustSection({
             <div
               key={itemTitle}
               role="listitem"
-              className={`rounded-2xl p-5 text-center transition-shadow hover:shadow-card ${
-                isDark
-                  ? "bg-white/8 border border-white/10"
-                  : "bg-white shadow-sm border border-gray-100"
-              }`}
+              className="rounded-2xl p-5 text-center transition-shadow hover:shadow-card bg-dark-card border border-dark-border"
             >
               <span
                 className="text-3xl mb-3 block"
@@ -108,26 +100,14 @@ export default function TrustSection({
               >
                 {icon}
               </span>
-              <p
-                className={`font-semibold text-sm ${
-                  isDark ? "text-white" : "text-navy-900"
-                }`}
-              >
+              <p className="font-semibold text-sm text-ink">
                 {itemTitle}
               </p>
-              <p
-                className={`text-xs mt-1 ${
-                  isDark ? "text-navy-300" : "text-gray-500"
-                }`}
-              >
+              <p className="text-xs mt-1 text-ink-dim">
                 {description}
               </p>
               {detail && (
-                <p
-                  className={`text-xs mt-1.5 font-medium ${
-                    isDark ? "text-gold-400" : "text-navy-600"
-                  }`}
-                >
+                <p className="text-xs mt-1.5 font-medium text-brand-accent">
                   {detail}
                 </p>
               )}
@@ -136,17 +116,13 @@ export default function TrustSection({
         </div>
 
         {/* SEBI disclaimer note */}
-        <p
-          className={`text-center text-xs mt-8 max-w-2xl mx-auto leading-relaxed ${
-            isDark ? "text-navy-400" : "text-gray-400"
-          }`}
-        >
+        <p className="text-center text-xs mt-8 max-w-2xl mx-auto leading-relaxed text-ink-muted">
           {disclaimerText}{" "}
           <a
             href="https://scores.sebi.gov.in"
             target="_blank"
             rel="noopener noreferrer"
-            className={`underline ${isDark ? "text-gold-400" : "text-navy-700"}`}
+            className="underline text-brand"
           >
             {scoresLabel}
           </a>

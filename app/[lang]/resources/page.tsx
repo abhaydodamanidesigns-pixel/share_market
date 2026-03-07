@@ -37,14 +37,14 @@ export default async function ResourcesPage({
       />
 
       {/* Featured article */}
-      <section className="section-padding bg-white" aria-labelledby="featured-heading">
+      <section className="section-padding bg-dark-surface" aria-labelledby="featured-heading">
         <div className="container-base">
-          <div className="bg-gradient-to-br from-navy-50 to-surface-200 rounded-3xl p-8 md:p-12 border border-navy-100">
-            <span className="badge bg-gold-100 text-gold-700 mb-3">{resources.featured.badge}</span>
-            <h2 id="featured-heading" className="text-2xl md:text-3xl font-bold text-navy-900 mb-3 mt-2">
+          <div className="bg-dark-card rounded-3xl p-8 md:p-12 border border-dark-border">
+            <span className="badge bg-dark-elevated text-brand-accent mb-3">{resources.featured.badge}</span>
+            <h2 id="featured-heading" className="text-2xl md:text-3xl font-bold text-ink mb-3 mt-2">
               {resources.featured.heading}
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-6 max-w-2xl">
+            <p className="text-ink-dim leading-relaxed mb-6 max-w-2xl">
               {resources.featured.excerpt}
             </p>
             <div className="flex flex-wrap gap-4 items-center">
@@ -54,7 +54,7 @@ export default async function ResourcesPage({
               >
                 {resources.featured.ctaLabel}
               </Link>
-              <div className="flex items-center gap-3 text-sm text-gray-500">
+              <div className="flex items-center gap-3 text-sm text-ink-muted">
                 <span>📖 {resources.featured.meta}</span>
                 <span>·</span>
                 <span>15 Nov 2024</span>
@@ -67,7 +67,7 @@ export default async function ResourcesPage({
       {/* Articles grid */}
       <section
         id="articles"
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="articles-heading"
       >
         <div className="container-base">
@@ -75,7 +75,7 @@ export default async function ResourcesPage({
             <h2 id="articles-heading" className="section-heading mb-2">
               {resources.articles.heading}
             </h2>
-            <p className="text-gray-600">
+            <p className="text-ink-dim">
               {resources.articles.items.length} {resources.articles.count}{" "}
               {resources.articles.categories.length - 1} {resources.articles.topicAreas}
             </p>
@@ -91,10 +91,10 @@ export default async function ResourcesPage({
               <span
                 key={label}
                 role="listitem"
-                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium bg-white border border-gray-200 text-navy-700 cursor-default"
+                className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-medium bg-dark-card border border-dark-border text-brand cursor-default"
               >
                 {label}
-                <span className="text-xs text-gray-400 font-normal">
+                <span className="text-xs text-ink-muted font-normal">
                   ({count})
                 </span>
               </span>
@@ -117,7 +117,7 @@ export default async function ResourcesPage({
 
       {/* Newsletter / notification opt-in (static) */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="newsletter-heading"
       >
         <div className="container-base">
@@ -126,11 +126,11 @@ export default async function ResourcesPage({
             <h2 id="newsletter-heading" className="section-heading mb-3">
               {resources.newsletter.heading}
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-ink-dim mb-6">
               {resources.newsletter.subtext}
             </p>
             <NewsletterForm />
-            <p className="text-xs text-gray-400 mt-3">
+            <p className="text-xs text-ink-muted mt-3">
               {resources.newsletter.privacyNote}
             </p>
           </div>

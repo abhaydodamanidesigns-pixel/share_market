@@ -33,11 +33,12 @@ const articleMeta = [
 const whyChooseUsIcons = ["⚖️", "🎓", "🏠", "📋"];
 
 const serviceIcons = ["📚", "📋", "🛡️", "🔄"];
+// Dark icon-bg tints for each service — learn/invest/protect/recover
 const serviceAccentClasses = [
-  "bg-blue-50",
-  "bg-emerald-50",
-  "bg-amber-50",
-  "bg-rose-50",
+  "bg-blue-900/40",
+  "bg-green-900/40",
+  "bg-amber-900/40",
+  "bg-red-900/40",
 ];
 const serviceHrefs = ["/learn", "/invest", "/protect", "/recover"];
 
@@ -120,7 +121,7 @@ export default async function HomePage({
 
       {/* 4. Service overview cards */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="services-heading"
       >
         <div className="container-base">
@@ -147,20 +148,20 @@ export default async function HomePage({
 
       {/* 5. Why choose us */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="why-us-heading"
       >
         <div className="container-base">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Text column */}
             <div>
-              <span className="badge bg-gold-50 text-gold-700 mb-3">
+              <span className="badge bg-dark-card text-brand-accent mb-3">
                 {dict.home.whyUs.badge}
               </span>
               <h2 id="why-us-heading" className="section-heading mt-2 mb-4">
                 {dict.home.whyUs.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-ink-dim leading-relaxed mb-6">
                 {dict.home.whyUs.description}
               </p>
               <Link href={`/${lang}/about`} className="btn-primary">
@@ -173,15 +174,15 @@ export default async function HomePage({
               {whyChooseUs.map(({ icon, title, description }) => (
                 <div
                   key={title}
-                  className="bg-surface-50 rounded-2xl p-5 border border-gray-100"
+                  className="bg-dark-card rounded-2xl p-5 border border-dark-border"
                 >
                   <span className="text-2xl mb-3 block" aria-hidden="true">
                     {icon}
                   </span>
-                  <h3 className="font-semibold text-navy-900 text-sm mb-1.5">
+                  <h3 className="font-semibold text-ink text-sm mb-1.5">
                     {title}
                   </h3>
-                  <p className="text-xs text-gray-600 leading-relaxed">
+                  <p className="text-xs text-ink-dim leading-relaxed">
                     {description}
                   </p>
                 </div>
@@ -200,7 +201,7 @@ export default async function HomePage({
 
       {/* 7. Featured articles */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="articles-heading"
       >
         <div className="container-base">

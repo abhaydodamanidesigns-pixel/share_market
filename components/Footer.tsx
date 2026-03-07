@@ -13,7 +13,7 @@ export default function Footer({
   const legalLinks = dict.footer.legalLinks;
   return (
     <footer
-      className="bg-navy-900 text-white"
+      className="bg-dark-bg text-ink"
       role="contentinfo"
       aria-label="Site footer"
     >
@@ -27,27 +27,27 @@ export default function Footer({
               className="flex items-center gap-2.5 mb-4"
               aria-label={dict.common.homeAriaLabel}
             >
-              <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-gold-500 text-navy-900 font-bold text-base">
+              <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-brand text-white font-bold text-base">
                 S
               </span>
-              <span className="font-bold text-lg tracking-tight text-white">
+              <span className="font-bold text-lg tracking-tight text-ink">
                 {dict.common.brandName}
               </span>
             </Link>
 
-            <p className="text-navy-200 text-sm leading-relaxed mb-5">
+            <p className="text-ink-dim text-sm leading-relaxed mb-5">
               {dict.footer.tagline}
             </p>
 
             {/* SEBI registration badge */}
-            <div className="inline-block bg-navy-800 border border-navy-700 rounded-xl px-4 py-3">
-              <p className="text-xs text-navy-300 font-medium">
+            <div className="inline-block bg-dark-card border border-dark-border rounded-xl px-4 py-3">
+              <p className="text-xs text-ink-muted font-medium">
                 {dict.footer.sebiRegNo}
               </p>
-              <p className="text-sm font-bold text-gold-400 mt-0.5">
+              <p className="text-sm font-bold text-brand-accent mt-0.5">
                 INA000XXXXXX
               </p>
-              <p className="text-xs text-navy-300 mt-1">
+              <p className="text-xs text-ink-muted mt-1">
                 {dict.footer.amfiArn}
               </p>
             </div>
@@ -55,7 +55,7 @@ export default function Footer({
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-white text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.ourServices}
             </h3>
             <ul className="space-y-2.5" role="list">
@@ -63,7 +63,7 @@ export default function Footer({
                 <li key={path}>
                   <Link
                     href={`/${locale}${path}`}
-                    className="text-navy-300 hover:text-gold-400 text-sm transition-colors"
+                    className="text-ink-dim hover:text-brand-accent text-sm transition-colors"
                   >
                     {label}
                   </Link>
@@ -74,7 +74,7 @@ export default function Footer({
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold text-white text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.company}
             </h3>
             <ul className="space-y-2.5" role="list">
@@ -82,7 +82,7 @@ export default function Footer({
                 <li key={path}>
                   <Link
                     href={`/${locale}${path}`}
-                    className="text-navy-300 hover:text-gold-400 text-sm transition-colors"
+                    className="text-ink-dim hover:text-brand-accent text-sm transition-colors"
                   >
                     {label}
                   </Link>
@@ -93,7 +93,7 @@ export default function Footer({
 
           {/* Legal */}
           <div>
-            <h3 className="font-semibold text-white text-sm uppercase tracking-wider mb-4">
+            <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.legalCompliance}
             </h3>
             <ul className="space-y-2.5" role="list">
@@ -101,7 +101,7 @@ export default function Footer({
                 <li key={path}>
                   <Link
                     href={`/${locale}${path}`}
-                    className="text-navy-300 hover:text-gold-400 text-sm transition-colors"
+                    className="text-ink-dim hover:text-brand-accent text-sm transition-colors"
                   >
                     {label}
                   </Link>
@@ -110,17 +110,17 @@ export default function Footer({
             </ul>
 
             {/* Contact block */}
-            <div className="mt-6 pt-5 border-t border-navy-700">
-              <p className="text-xs text-navy-400 mb-1 uppercase tracking-wide font-medium">
+            <div className="mt-6 pt-5 border-t border-dark-border">
+              <p className="text-xs text-ink-muted mb-1 uppercase tracking-wide font-medium">
                 {dict.footer.getInTouch}
               </p>
               <a
                 href="mailto:hello@saarthi-finance.in"
-                className="text-sm text-navy-300 hover:text-gold-400 transition-colors"
+                className="text-sm text-ink-dim hover:text-brand-accent transition-colors"
               >
                 hello@saarthi-finance.in
               </a>
-              <p className="text-sm text-navy-300 mt-1">
+              <p className="text-sm text-ink-dim mt-1">
                 +91 98765 43210
               </p>
             </div>
@@ -129,20 +129,20 @@ export default function Footer({
       </div>
 
       {/* Compliance disclaimer */}
-      <div className="border-t border-navy-800">
+      <div className="border-t border-dark-border">
         <div className="container-base py-6">
-          <p className="text-xs text-navy-400 leading-relaxed mb-3">
+          <p className="text-xs text-ink-muted leading-relaxed mb-3">
             {dict.footer.disclaimer}
           </p>
-          <p className="text-xs text-navy-400 leading-relaxed">
+          <p className="text-xs text-ink-muted leading-relaxed">
             {dict.footer.disclaimerInsurance}
           </p>
         </div>
       </div>
 
       {/* Copyright bar */}
-      <div className="border-t border-navy-800 bg-navy-950">
-        <div className="container-base py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-navy-400">
+      <div className="border-t border-dark-border bg-dark-bg">
+        <div className="container-base py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-muted">
           <p>
             © {new Date().getFullYear()} {dict.common.brandName}. {dict.footer.copyright}
           </p>
@@ -152,7 +152,7 @@ export default function Footer({
               href="https://www.sebi.gov.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-navy-300 hover:text-gold-400 transition-colors"
+              className="text-ink-dim hover:text-brand-accent transition-colors"
             >
               SEBI
             </a>{" "}
@@ -161,7 +161,7 @@ export default function Footer({
               href="https://www.irdai.gov.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-navy-300 hover:text-gold-400 transition-colors"
+              className="text-ink-dim hover:text-brand-accent transition-colors"
             >
               IRDAI
             </a>

@@ -49,8 +49,8 @@ export default function Navbar({
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-nav"
-          : "bg-white/90 backdrop-blur-sm"
+          ? "bg-dark-bg/95 backdrop-blur-md shadow-nav"
+          : "bg-dark-bg/90 backdrop-blur-sm"
       }`}
       role="banner"
     >
@@ -65,10 +65,10 @@ export default function Navbar({
           aria-label={dict.common.homeAriaLabel}
         >
           {/* Logo mark */}
-          <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-navy-900 text-white font-bold text-base group-hover:bg-navy-800 transition-colors">
+          <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-brand text-white font-bold text-base group-hover:bg-brand-hover transition-colors">
             S
           </span>
-          <span className="font-bold text-lg text-navy-900 tracking-tight whitespace-nowrap">
+          <span className="font-bold text-lg text-ink tracking-tight whitespace-nowrap">
             {dict.common.brandName}
           </span>
         </Link>
@@ -85,8 +85,8 @@ export default function Navbar({
                   href={href}
                   className={`whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-navy-900 bg-navy-50 font-semibold"
-                      : "text-gray-600 hover:text-navy-900 hover:bg-gray-50"
+                      ? "text-brand bg-dark-card font-semibold"
+                      : "text-ink-dim hover:text-ink hover:bg-dark-hover"
                   }`}
                   aria-current={isActive ? "page" : undefined}
                 >
@@ -110,7 +110,7 @@ export default function Navbar({
 
         {/* Mobile hamburger */}
         <button
-          className="xl:hidden p-2 rounded-lg text-navy-900 hover:bg-gray-100 transition-colors"
+          className="xl:hidden p-2 rounded-lg text-ink hover:bg-dark-hover transition-colors"
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           aria-expanded={isMobileOpen}
           aria-controls="mobile-menu"
@@ -159,7 +159,7 @@ export default function Navbar({
       {isMobileOpen && (
         <div
           id="mobile-menu"
-          className="xl:hidden bg-white border-t border-gray-100 shadow-lg"
+          className="xl:hidden bg-dark-surface border-t border-dark-border shadow-lg"
           role="dialog"
           aria-label="Mobile navigation"
         >
@@ -174,8 +174,8 @@ export default function Navbar({
                     href={href}
                     className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
                       isActive
-                        ? "text-navy-900 bg-navy-50 font-semibold"
-                        : "text-gray-700 hover:bg-gray-50"
+                        ? "text-brand bg-dark-card font-semibold"
+                        : "text-ink-dim hover:bg-dark-hover"
                     }`}
                     aria-current={isActive ? "page" : undefined}
                   >
@@ -185,7 +185,7 @@ export default function Navbar({
               );
             })}
 
-            <li className="pt-2 border-t border-gray-100 mt-2">
+            <li className="pt-2 border-t border-dark-border mt-2">
               <LanguageSwitcher currentLocale={locale} className="flex items-center gap-0.5 mb-3" />
               <Link
                 href={`/${locale}/contact`}

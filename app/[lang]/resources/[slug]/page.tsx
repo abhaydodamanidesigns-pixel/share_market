@@ -97,10 +97,10 @@ export default function ArticlePage({
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24">
         <span className="text-6xl mb-4" aria-hidden="true">📄</span>
-        <h1 className="text-2xl font-bold text-navy-900 mb-2">
+        <h1 className="text-2xl font-bold text-ink mb-2">
           Article Not Found
         </h1>
-        <p className="text-gray-600 mb-6">
+        <p className="text-ink-dim mb-6">
           This article doesn&apos;t exist or may have been moved.
         </p>
         <Link href={`/${lang}/resources`} className="btn-primary">
@@ -130,14 +130,14 @@ export default function ArticlePage({
   return (
     <>
       {/* Article header */}
-      <section className="gradient-navy text-white pt-28 pb-12">
+      <section className="gradient-navy text-ink pt-28 pb-12">
         <div className="container-base">
           <div className="max-w-3xl">
             {/* Breadcrumb */}
             <nav aria-label="Breadcrumb" className="mb-6">
-              <ol className="flex items-center gap-2 text-xs text-navy-300">
+              <ol className="flex items-center gap-2 text-xs text-ink-dim">
                 <li>
-                  <Link href={`/${lang}`} className="hover:text-white transition-colors">
+                  <Link href={`/${lang}`} className="hover:text-ink transition-colors">
                     Home
                   </Link>
                 </li>
@@ -145,33 +145,33 @@ export default function ArticlePage({
                 <li>
                   <Link
                     href={`/${lang}/resources`}
-                    className="hover:text-white transition-colors"
+                    className="hover:text-ink transition-colors"
                   >
                     Resources
                   </Link>
                 </li>
                 <li aria-hidden="true">/</li>
-                <li className="text-white font-medium" aria-current="page">
+                <li className="text-ink font-medium" aria-current="page">
                   {category}
                 </li>
               </ol>
             </nav>
 
             {/* Category */}
-            <span className="badge bg-gold-500/20 text-gold-300 mb-3">
+            <span className="badge bg-dark-card text-brand-accent mb-3">
               {category}
             </span>
 
             {/* Title */}
-            <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight mb-4 mt-2">
+            <h1 className="text-3xl md:text-4xl font-bold text-ink leading-tight mb-4 mt-2">
               {title}
             </h1>
 
             {/* Excerpt */}
-            <p className="text-lg text-navy-200 leading-relaxed mb-6">{excerpt}</p>
+            <p className="text-lg text-ink-dim leading-relaxed mb-6">{excerpt}</p>
 
             {/* Meta */}
-            <div className="flex items-center gap-4 text-sm text-navy-300">
+            <div className="flex items-center gap-4 text-sm text-ink-dim">
               <span className="text-2xl" aria-hidden="true">{coverEmoji}</span>
               <time dateTime={date}>
                 {new Date(date).toLocaleDateString("en-IN", {
@@ -189,7 +189,7 @@ export default function ArticlePage({
 
       {/* Article body */}
       <article
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-label={`Article: ${title}`}
       >
         <div className="container-base">
@@ -200,17 +200,17 @@ export default function ArticlePage({
                 {content.map(({ heading, body }, idx) => (
                   <section key={idx} className="mb-8">
                     {heading && (
-                      <h2 className="text-xl font-bold text-navy-900 mb-3">
+                      <h2 className="text-xl font-bold text-ink mb-3">
                         {heading}
                       </h2>
                     )}
-                    <p className="text-gray-700 leading-relaxed">{body}</p>
+                    <p className="text-ink-dim leading-relaxed">{body}</p>
                   </section>
                 ))}
               </div>
 
               {/* Disclaimer */}
-              <div className="mt-10 p-4 bg-amber-50 border border-amber-100 rounded-xl text-xs text-amber-800 leading-relaxed">
+              <div className="mt-10 p-4 bg-dark-card border border-dark-border rounded-xl text-xs text-trade-warn leading-relaxed">
                 <strong>Disclaimer:</strong> This article is for educational
                 purposes only and does not constitute legal or financial advice.
                 Regulations and procedures may change. Always verify with the
@@ -225,7 +225,7 @@ export default function ArticlePage({
               <div className="sticky top-24 space-y-6">
                 {/* Related articles */}
                 <div className="card">
-                  <h3 className="font-semibold text-navy-900 mb-4 text-sm">
+                  <h3 className="font-semibold text-ink mb-4 text-sm">
                     Related Resources
                   </h3>
                   <ul className="space-y-2.5">
@@ -233,7 +233,7 @@ export default function ArticlePage({
                       <li key={href}>
                         <Link
                           href={href}
-                          className="text-sm text-navy-700 hover:text-navy-900 flex items-center gap-1.5 transition-colors"
+                          className="text-sm text-brand hover:text-ink flex items-center gap-1.5 transition-colors"
                         >
                           <svg
                             className="w-3.5 h-3.5 flex-shrink-0"
@@ -257,11 +257,11 @@ export default function ArticlePage({
                 </div>
 
                 {/* Consultation nudge */}
-                <div className="bg-navy-50 rounded-2xl p-5 border border-navy-100">
-                  <p className="font-semibold text-navy-900 text-sm mb-2">
+                <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">
+                  <p className="font-semibold text-ink text-sm mb-2">
                     Need help with your specific case?
                   </p>
-                  <p className="text-xs text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-xs text-ink-dim mb-4 leading-relaxed">
                     Our advisers can review your situation and guide you
                     step by step — free for the first session.
                   </p>

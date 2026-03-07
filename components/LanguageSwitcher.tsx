@@ -52,8 +52,8 @@ export default function LanguageSwitcher({
           onClick={() => handleLocaleChange(loc)}
           className={`whitespace-nowrap px-2.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
             loc === locale
-              ? "bg-navy-100 text-navy-900 font-semibold"
-              : "text-gray-600 hover:text-navy-900 hover:bg-gray-100"
+              ? "bg-dark-card text-brand font-semibold"
+              : "text-ink-dim hover:text-ink hover:bg-dark-hover"
           }`}
           aria-pressed={loc === locale}
           aria-label={`Switch to ${LOCALE_LABELS[loc]}`}

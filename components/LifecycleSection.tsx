@@ -6,29 +6,29 @@ const LIFECYCLE_STAGE_META = [
     step: "01",
     href: "/learn",
     icon: "📚",
-    color: "from-blue-50 to-indigo-50 border-blue-100",
-    iconBg: "bg-blue-100",
+    color: "bg-dark-card border-dark-border",
+    iconBg: "bg-blue-900/40",
   },
   {
     step: "02",
     href: "/invest",
     icon: "📈",
-    color: "from-emerald-50 to-teal-50 border-emerald-100",
-    iconBg: "bg-emerald-100",
+    color: "bg-dark-card border-dark-border",
+    iconBg: "bg-green-900/40",
   },
   {
     step: "03",
     href: "/protect",
     icon: "🛡️",
-    color: "from-amber-50 to-orange-50 border-amber-100",
-    iconBg: "bg-amber-100",
+    color: "bg-dark-card border-dark-border",
+    iconBg: "bg-amber-900/40",
   },
   {
     step: "04",
     href: "/recover",
     icon: "🔄",
-    color: "from-rose-50 to-pink-50 border-rose-100",
-    iconBg: "bg-rose-100",
+    color: "bg-dark-card border-dark-border",
+    iconBg: "bg-red-900/40",
   },
 ];
 
@@ -48,13 +48,13 @@ export default function LifecycleSection({
   }));
   return (
     <section
-      className="section-padding bg-white"
+      className="section-padding bg-dark-surface"
       aria-labelledby="lifecycle-heading"
     >
       <div className="container-base">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge bg-gold-50 text-gold-700 mb-3">
+          <span className="badge bg-dark-card text-brand-accent mb-3">
             {dict.lifecycle.badge}
           </span>
           <h2
@@ -77,7 +77,7 @@ export default function LifecycleSection({
                 className={`relative rounded-2xl border bg-gradient-to-br p-6 ${color} flex flex-col group hover:shadow-card-hover transition-shadow duration-300`}
               >
                 {/* Step number */}
-                <span className="absolute top-4 right-4 text-xs font-bold text-gray-300">
+                <span className="absolute top-4 right-4 text-xs font-bold text-ink-muted">
                   {step}
                 </span>
 
@@ -90,12 +90,12 @@ export default function LifecycleSection({
                 </div>
 
                 {/* Label */}
-                <h3 className="text-xl font-bold text-navy-900 mb-2">
+                <h3 className="text-xl font-bold text-ink mb-2">
                   {label}
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1">
+                <p className="text-sm text-ink-dim leading-relaxed mb-4 flex-1">
                   {description}
                 </p>
 
@@ -104,10 +104,10 @@ export default function LifecycleSection({
                   {features.map((f) => (
                     <li
                       key={f}
-                      className="flex items-start gap-2 text-xs text-gray-700"
+                      className="flex items-start gap-2 text-xs text-ink-dim"
                     >
                       <svg
-                        className="w-3.5 h-3.5 text-navy-400 flex-shrink-0 mt-0.5"
+                        className="w-3.5 h-3.5 text-trade-profit flex-shrink-0 mt-0.5"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -128,7 +128,7 @@ export default function LifecycleSection({
                 {/* CTA link */}
                 <Link
                   href={href}
-                  className="inline-flex items-center gap-1.5 text-navy-700 font-semibold text-sm group-hover:text-navy-900 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-brand font-semibold text-sm group-hover:text-ink transition-colors"
                   aria-label={`${dict.lifecycle.explore} our ${label} services`}
                 >
                   {dict.lifecycle.explore} {label}

@@ -38,7 +38,7 @@ export default async function RecoverPage({
 
       {/* Problem statement */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="recover-problem-heading"
       >
         <div className="container-base">
@@ -47,13 +47,13 @@ export default async function RecoverPage({
               <h2 id="recover-problem-heading" className="section-heading mb-4">
                 {recover.problem.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {recover.problem.para1}
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {recover.problem.para2}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-ink-dim leading-relaxed">
                 {recover.problem.para3}
               </p>
             </div>
@@ -63,11 +63,11 @@ export default async function RecoverPage({
               {recover.stats.map(({ number, label, sub }) => (
                 <div
                   key={label}
-                  className="bg-rose-50 border border-rose-100 rounded-2xl p-5 text-center"
+                  className="bg-dark-card border border-dark-border rounded-2xl p-5 text-center"
                 >
-                  <p className="text-2xl font-bold text-navy-900 mb-1">{number}</p>
-                  <p className="text-sm font-medium text-navy-700">{label}</p>
-                  <p className="text-xs text-gray-500 mt-1">{sub}</p>
+                  <p className="text-2xl font-bold text-ink mb-1">{number}</p>
+                  <p className="text-sm font-medium text-brand">{label}</p>
+                  <p className="text-xs text-ink-muted mt-1">{sub}</p>
                 </div>
               ))}
             </div>
@@ -86,7 +86,7 @@ export default async function RecoverPage({
       {/* Physical shares section */}
       <section
         id="physical-shares"
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="physical-heading"
       >
         <div className="container-base">
@@ -103,14 +103,14 @@ export default async function RecoverPage({
             {recover.physicalShares.steps.map(({ number, icon, title, description }) => (
               <div
                 key={number}
-                className="bg-surface-50 rounded-2xl p-5 border border-gray-100 text-center flex flex-col items-center"
+                className="bg-dark-card rounded-2xl p-5 border border-dark-border text-center flex flex-col items-center"
               >
-                <div className="w-10 h-10 rounded-full bg-navy-900 text-white font-bold flex items-center justify-center text-sm mb-3">
+                <div className="w-10 h-10 rounded-full bg-brand text-white font-bold flex items-center justify-center text-sm mb-3">
                   {number}
                 </div>
                 <span className="text-2xl mb-2" aria-hidden="true">{icon}</span>
-                <h3 className="font-semibold text-navy-900 text-sm mb-2">{title}</h3>
-                <p className="text-xs text-gray-600 leading-relaxed">{description}</p>
+                <h3 className="font-semibold text-ink text-sm mb-2">{title}</h3>
+                <p className="text-xs text-ink-dim leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -119,7 +119,7 @@ export default async function RecoverPage({
 
       {/* Transmission services */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="transmission-heading"
       >
         <div className="container-base">
@@ -136,8 +136,8 @@ export default async function RecoverPage({
             {recover.transmission.items.map(({ icon, title, description }) => (
               <div key={title} className="card">
                 <span className="text-3xl mb-3 block" aria-hidden="true">{icon}</span>
-                <h3 className="font-semibold text-navy-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+                <h3 className="font-semibold text-ink mb-2">{title}</h3>
+                <p className="text-sm text-ink-dim leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -145,14 +145,14 @@ export default async function RecoverPage({
       </section>
 
       {/* Internal links */}
-      <section className="py-10 bg-white">
+      <section className="py-10 bg-dark-surface">
         <div className="container-base">
           <div className="flex flex-wrap gap-3 justify-center">
-            <span className="text-sm text-gray-500 self-center">{recover.crosslinks.label}</span>
-            <Link href={`/${lang}/invest`} className="badge bg-emerald-50 text-emerald-700 py-1.5 px-4">
+            <span className="text-sm text-ink-muted self-center">{recover.crosslinks.label}</span>
+            <Link href={`/${lang}/invest`} className="badge bg-dark-card text-trade-profit py-1.5 px-4">
               {recover.crosslinks.investment}
             </Link>
-            <Link href={`/${lang}/protect`} className="badge bg-amber-50 text-amber-700 py-1.5 px-4">
+            <Link href={`/${lang}/protect`} className="badge bg-dark-card text-trade-warn py-1.5 px-4">
               {recover.crosslinks.insurance}
             </Link>
           </div>

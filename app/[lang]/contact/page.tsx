@@ -30,7 +30,7 @@ export default async function ContactPage({ params }: { params: { lang: string }
       />
 
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="consultation-types-heading"
       >
         <div className="container-base">
@@ -52,11 +52,11 @@ export default async function ContactPage({ params }: { params: { lang: string }
                 <span className="text-3xl mb-3 block" aria-hidden="true">
                   {icon}
                 </span>
-                <h3 className="font-semibold text-navy-900 mb-1.5">{title}</h3>
-                <p className="text-xs text-gray-500 mb-2 leading-relaxed">
+                <h3 className="font-semibold text-ink mb-1.5">{title}</h3>
+                <p className="text-xs text-ink-muted mb-2 leading-relaxed">
                   {description}
                 </p>
-                <span className="badge bg-navy-50 text-navy-600">
+                <span className="badge bg-dark-elevated text-brand">
                   {duration} session
                 </span>
               </div>
@@ -67,20 +67,20 @@ export default async function ContactPage({ params }: { params: { lang: string }
 
       <section
         id="consultation-form"
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="form-heading"
       >
         <div className="container-base">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
-              <div className="bg-white rounded-3xl p-8 shadow-card border border-gray-100">
+              <div className="bg-dark-surface rounded-3xl p-8 shadow-card border border-dark-border">
                 <h2
                   id="form-heading"
-                  className="text-2xl font-bold text-navy-900 mb-2"
+                  className="text-2xl font-bold text-ink mb-2"
                 >
                   {contact.form.heading}
                 </h2>
-                <p className="text-gray-600 text-sm mb-6">
+                <p className="text-ink-dim text-sm mb-6">
                   {contact.form.subtext}
                 </p>
                 <ContactForm dict={contact.formLabels} />
@@ -90,13 +90,13 @@ export default async function ContactPage({ params }: { params: { lang: string }
             <aside aria-label="Contact information and what to expect">
               <div className="space-y-6">
                 <div className="card">
-                  <h3 className="font-semibold text-navy-900 mb-4">
+                  <h3 className="font-semibold text-ink mb-4">
                     {contact.whatToExpect.heading}
                   </h3>
                   <ol className="space-y-3">
                     {contact.whatToExpect.items.map((item, idx) => (
-                      <li key={idx} className="flex gap-3 text-sm text-gray-600">
-                        <span className="w-5 h-5 rounded-full bg-navy-100 text-navy-700 font-bold text-xs flex-shrink-0 flex items-center justify-center mt-0.5">
+                      <li key={idx} className="flex gap-3 text-sm text-ink-dim">
+                        <span className="w-5 h-5 rounded-full bg-dark-elevated text-ink-dim font-bold text-xs flex-shrink-0 flex items-center justify-center mt-0.5">
                           {idx + 1}
                         </span>
                         {item}
@@ -106,16 +106,16 @@ export default async function ContactPage({ params }: { params: { lang: string }
                 </div>
 
                 <div className="card">
-                  <h3 className="font-semibold text-navy-900 mb-4">
+                  <h3 className="font-semibold text-ink mb-4">
                     {contact.directContact.heading}
                   </h3>
                   <div className="space-y-3">
                     <a
                       href="mailto:hello@saarthi-finance.in"
-                      className="flex items-center gap-3 text-sm text-gray-700 hover:text-navy-900 transition-colors"
+                      className="flex items-center gap-3 text-sm text-ink-dim hover:text-ink transition-colors"
                     >
                       <span
-                        className="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center"
+                        className="w-8 h-8 rounded-lg bg-dark-elevated flex items-center justify-center"
                         aria-hidden="true"
                       >
                         ✉️
@@ -124,45 +124,45 @@ export default async function ContactPage({ params }: { params: { lang: string }
                     </a>
                     <a
                       href="tel:+919876543210"
-                      className="flex items-center gap-3 text-sm text-gray-700 hover:text-navy-900 transition-colors"
+                      className="flex items-center gap-3 text-sm text-ink-dim hover:text-ink transition-colors"
                     >
                       <span
-                        className="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center"
+                        className="w-8 h-8 rounded-lg bg-dark-elevated flex items-center justify-center"
                         aria-hidden="true"
                       >
                         📞
                       </span>
                       +91 98765 43210
                     </a>
-                    <div className="flex items-start gap-3 text-sm text-gray-700">
+                    <div className="flex items-start gap-3 text-sm text-ink-dim">
                       <span
-                        className="w-8 h-8 rounded-lg bg-navy-50 flex items-center justify-center flex-shrink-0"
+                        className="w-8 h-8 rounded-lg bg-dark-elevated flex items-center justify-center flex-shrink-0"
                         aria-hidden="true"
                       >
                         📍
                       </span>
-                      <address className="not-italic text-gray-600 text-xs leading-relaxed whitespace-pre-line">
+                      <address className="not-italic text-ink-muted text-xs leading-relaxed whitespace-pre-line">
                         {contact.directContact.address}
                       </address>
                     </div>
                   </div>
                 </div>
 
-                <div className="bg-navy-50 rounded-2xl p-5 border border-navy-100">
-                  <p className="text-xs font-bold text-navy-700 uppercase tracking-wide mb-2">
+                <div className="bg-dark-card rounded-2xl p-5 border border-dark-border">
+                  <p className="text-xs font-bold text-brand uppercase tracking-wide mb-2">
                     {contact.directContact.regulatoryTitle}
                   </p>
-                  <p className="text-xs text-gray-600 leading-relaxed whitespace-pre-line">
+                  <p className="text-xs text-ink-dim leading-relaxed whitespace-pre-line">
                     {contact.directContact.regulatoryDetails}
                   </p>
-                  <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+                  <p className="text-xs text-ink-muted mt-2 leading-relaxed">
                     {contact.directContact.grievanceNote}
                   </p>
                 </div>
 
                 <Link
                   href={`/${lang}/compliance`}
-                  className="text-sm text-navy-700 hover:text-navy-900 flex items-center gap-1.5 transition-colors"
+                  className="text-sm text-brand hover:text-ink flex items-center gap-1.5 transition-colors"
                 >
                   <svg
                     className="w-4 h-4"

@@ -66,6 +66,9 @@ export default function ContactForm({ dict }: ContactFormProps) {
       "We'll confirm your slot within 1 business day. The first session is always free — no credit card required.",
   };
 
+  const inputClass =
+    "w-full px-4 py-3 rounded-xl border border-dark-border bg-dark-card text-sm text-ink placeholder:text-ink-muted focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand";
+
   return (
     <form
       aria-label="Consultation booking form"
@@ -78,10 +81,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
         <div>
           <label
             htmlFor="first-name"
-            className="block text-sm font-medium text-navy-900 mb-1.5"
+            className="block text-sm font-medium text-ink mb-1.5"
           >
             {d.firstName}{" "}
-            <span className="text-red-500" aria-hidden="true">
+            <span className="text-trade-loss" aria-hidden="true">
               *
             </span>
           </label>
@@ -92,17 +95,17 @@ export default function ContactForm({ dict }: ContactFormProps) {
             required
             autoComplete="given-name"
             placeholder="Rahul"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300"
+            className={inputClass}
             aria-required="true"
           />
         </div>
         <div>
           <label
             htmlFor="last-name"
-            className="block text-sm font-medium text-navy-900 mb-1.5"
+            className="block text-sm font-medium text-ink mb-1.5"
           >
             {d.lastName}{" "}
-            <span className="text-red-500" aria-hidden="true">
+            <span className="text-trade-loss" aria-hidden="true">
               *
             </span>
           </label>
@@ -113,7 +116,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
             required
             autoComplete="family-name"
             placeholder="Sharma"
-            className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300"
+            className={inputClass}
             aria-required="true"
           />
         </div>
@@ -123,10 +126,10 @@ export default function ContactForm({ dict }: ContactFormProps) {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-navy-900 mb-1.5"
+          className="block text-sm font-medium text-ink mb-1.5"
         >
           {d.email}{" "}
-          <span className="text-red-500" aria-hidden="true">
+          <span className="text-trade-loss" aria-hidden="true">
             *
           </span>
         </label>
@@ -137,7 +140,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
           required
           autoComplete="email"
           placeholder="rahul@example.com"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300"
+          className={inputClass}
           aria-required="true"
         />
       </div>
@@ -146,15 +149,15 @@ export default function ContactForm({ dict }: ContactFormProps) {
       <div>
         <label
           htmlFor="phone"
-          className="block text-sm font-medium text-navy-900 mb-1.5"
+          className="block text-sm font-medium text-ink mb-1.5"
         >
           {d.mobile}{" "}
-          <span className="text-red-500" aria-hidden="true">
+          <span className="text-trade-loss" aria-hidden="true">
             *
           </span>
         </label>
         <div className="flex gap-2">
-          <span className="inline-flex items-center px-3 py-3 rounded-xl border border-gray-200 bg-gray-50 text-sm text-gray-500">
+          <span className="inline-flex items-center px-3 py-3 rounded-xl border border-dark-border bg-dark-elevated text-sm text-ink-muted">
             +91
           </span>
           <input
@@ -164,7 +167,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
             required
             autoComplete="tel"
             placeholder="98765 43210"
-            className="flex-1 px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300"
+            className={`flex-1 ${inputClass}`}
             aria-required="true"
           />
         </div>
@@ -174,14 +177,14 @@ export default function ContactForm({ dict }: ContactFormProps) {
       <div>
         <label
           htmlFor="consultation-type"
-          className="block text-sm font-medium text-navy-900 mb-1.5"
+          className="block text-sm font-medium text-ink mb-1.5"
         >
           {d.consultationType}
         </label>
         <select
           id="consultation-type"
           name="consultationType"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300 bg-white"
+          className={inputClass}
         >
           <option value="">{d.consultationPlaceholder}</option>
           <option value="investment">{d.consultationOptions.investment}</option>
@@ -196,14 +199,14 @@ export default function ContactForm({ dict }: ContactFormProps) {
       <div>
         <label
           htmlFor="preferred-time"
-          className="block text-sm font-medium text-navy-900 mb-1.5"
+          className="block text-sm font-medium text-ink mb-1.5"
         >
           {d.preferredTime}
         </label>
         <select
           id="preferred-time"
           name="preferredTime"
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300 bg-white"
+          className={inputClass}
         >
           <option value="">{d.preferredTimePlaceholder}</option>
           <option value="morning">{d.timeOptions.morning}</option>
@@ -216,7 +219,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-navy-900 mb-1.5"
+          className="block text-sm font-medium text-ink mb-1.5"
         >
           {d.message}
         </label>
@@ -225,7 +228,8 @@ export default function ContactForm({ dict }: ContactFormProps) {
           name="message"
           rows={4}
           placeholder={d.messagePlaceholder}
-          className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-navy-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-300 resize-none"
+          className={inputClass}
+          style={{ resize: "none" }}
         />
       </div>
 
@@ -236,15 +240,15 @@ export default function ContactForm({ dict }: ContactFormProps) {
           name="consent"
           type="checkbox"
           required
-          className="mt-0.5 w-4 h-4 rounded accent-navy-700"
+          className="mt-0.5 w-4 h-4 rounded accent-brand"
           aria-required="true"
         />
         <label
           htmlFor="consent"
-          className="text-xs text-gray-600 leading-relaxed"
+          className="text-xs text-ink-dim leading-relaxed"
         >
           {d.consent}{" "}
-          <a href="/compliance#privacy" className="text-navy-700 underline">
+          <a href="/compliance#privacy" className="text-brand underline">
             {d.privacyPolicy}
           </a>
           .
@@ -270,7 +274,7 @@ export default function ContactForm({ dict }: ContactFormProps) {
         </svg>
       </button>
 
-      <p className="text-xs text-gray-400 text-center">
+      <p className="text-xs text-ink-muted text-center">
         {d.submitNote}
       </p>
     </form>

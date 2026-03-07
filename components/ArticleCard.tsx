@@ -38,17 +38,17 @@ export default function ArticleCard({
     <article className="card group flex flex-col h-full">
       {/* Cover placeholder */}
       <div
-        className="w-full h-36 rounded-xl bg-gradient-to-br from-navy-50 to-surface-200 flex items-center justify-center text-5xl mb-4"
+        className="w-full h-36 rounded-xl bg-gradient-to-br from-dark-card to-dark-elevated flex items-center justify-center text-5xl mb-4"
         aria-hidden="true"
       >
         {coverEmoji}
       </div>
 
       {/* Category badge */}
-      <span className="badge bg-navy-50 text-navy-700 mb-2">{category}</span>
+      <span className="badge bg-dark-card text-brand mb-2">{category}</span>
 
       {/* Title */}
-      <h3 className="text-base font-semibold text-navy-900 leading-snug mb-2 group-hover:text-navy-700 transition-colors">
+      <h3 className="text-base font-semibold text-ink leading-snug mb-2 group-hover:text-brand transition-colors">
         <Link
           href={href}
           className="stretched-link"
@@ -59,12 +59,12 @@ export default function ArticleCard({
       </h3>
 
       {/* Excerpt */}
-      <p className="text-sm text-gray-600 leading-relaxed mb-4 flex-1 line-clamp-3">
+      <p className="text-sm text-ink-dim leading-relaxed mb-4 flex-1 line-clamp-3">
         {excerpt}
       </p>
 
       {/* Meta */}
-      <div className="flex items-center gap-3 text-xs text-gray-400 pt-3 border-t border-gray-100">
+      <div className="flex items-center gap-3 text-xs text-ink-muted pt-3 border-t border-dark-border">
         <time dateTime={date}>
           {new Date(date).toLocaleDateString("en-IN", {
             day: "numeric",

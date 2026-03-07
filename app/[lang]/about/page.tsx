@@ -31,23 +31,23 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       />
 
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="mission-heading"
       >
         <div className="container-base">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="badge bg-navy-50 text-navy-700 mb-3">{about.mission.badge}</span>
+              <span className="badge bg-dark-card text-brand mb-3">{about.mission.badge}</span>
               <h2 id="mission-heading" className="section-heading mt-2 mb-4">
                 {about.mission.heading}
               </h2>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {about.mission.para1}
               </p>
-              <p className="text-gray-600 leading-relaxed mb-4">
+              <p className="text-ink-dim leading-relaxed mb-4">
                 {about.mission.para2}
               </p>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-ink-dim leading-relaxed">
                 {about.mission.para3}
               </p>
             </div>
@@ -55,10 +55,10 @@ export default async function AboutPage({ params }: { params: { lang: string } }
               {about.mission.stats.map(({ number, label }) => (
                 <div
                   key={label}
-                  className="bg-surface-50 border border-gray-100 rounded-2xl p-6 text-center"
+                  className="bg-dark-card border border-dark-border rounded-2xl p-6 text-center"
                 >
-                  <p className="text-3xl font-bold text-navy-900 mb-1">{number}</p>
-                  <p className="text-sm text-gray-600">{label}</p>
+                  <p className="text-3xl font-bold text-ink mb-1">{number}</p>
+                  <p className="text-sm text-ink-dim">{label}</p>
                 </div>
               ))}
             </div>
@@ -67,7 +67,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       </section>
 
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="values-heading"
       >
         <div className="container-base">
@@ -83,8 +83,8 @@ export default async function AboutPage({ params }: { params: { lang: string } }
             {about.values.items.map(({ icon, title, description }) => (
               <div key={title} className="card">
                 <span className="text-3xl mb-3 block" aria-hidden="true">{icon}</span>
-                <h3 className="font-semibold text-navy-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+                <h3 className="font-semibold text-ink mb-2">{title}</h3>
+                <p className="text-sm text-ink-dim leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -93,7 +93,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
 
       <section
         id="team"
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="team-heading"
       >
         <div className="container-base">
@@ -109,17 +109,17 @@ export default async function AboutPage({ params }: { params: { lang: string } }
             {about.team.members.map(({ name, role, credentials, bio, initials }) => (
               <div key={name} className="card text-center">
                 <div
-                  className="w-16 h-16 rounded-full bg-navy-100 text-navy-700 font-bold text-xl flex items-center justify-center mx-auto mb-4"
+                  className="w-16 h-16 rounded-full bg-dark-elevated text-ink-dim font-bold text-xl flex items-center justify-center mx-auto mb-4"
                   aria-hidden="true"
                 >
                   {initials}
                 </div>
-                <h3 className="font-bold text-navy-900 text-lg">{name}</h3>
-                <p className="text-navy-600 text-sm font-medium mt-1">{role}</p>
-                <p className="text-xs text-gold-600 font-semibold mt-1 mb-3">
+                <h3 className="font-bold text-ink text-lg">{name}</h3>
+                <p className="text-brand text-sm font-medium mt-1">{role}</p>
+                <p className="text-xs text-brand-accent font-semibold mt-1 mb-3">
                   {credentials}
                 </p>
-                <p className="text-sm text-gray-600 leading-relaxed">{bio}</p>
+                <p className="text-sm text-ink-dim leading-relaxed">{bio}</p>
               </div>
             ))}
           </div>
@@ -127,7 +127,7 @@ export default async function AboutPage({ params }: { params: { lang: string } }
       </section>
 
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="timeline-heading"
       >
         <div className="container-base">
@@ -145,16 +145,16 @@ export default async function AboutPage({ params }: { params: { lang: string } }
                 >
                   {idx < about.journey.milestones.length - 1 && (
                     <div
-                      className="absolute left-6 top-10 bottom-0 w-px bg-navy-100"
+                      className="absolute left-6 top-10 bottom-0 w-px bg-dark-border"
                       aria-hidden="true"
                     />
                   )}
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-navy-900 text-white font-bold text-xs flex items-center justify-center z-10">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-brand text-white font-bold text-xs flex items-center justify-center z-10">
                     {year.slice(2)}
                   </div>
                   <div className="pt-2">
-                    <p className="text-xs font-bold text-gold-600 mb-0.5">{year}</p>
-                    <p className="text-sm text-gray-700 leading-relaxed">{event}</p>
+                    <p className="text-xs font-bold text-brand-accent mb-0.5">{year}</p>
+                    <p className="text-sm text-ink-dim leading-relaxed">{event}</p>
                   </div>
                 </li>
               ))}

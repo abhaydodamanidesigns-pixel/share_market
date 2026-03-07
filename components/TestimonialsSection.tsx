@@ -15,13 +15,13 @@ export default function TestimonialsSection({ dict }: { dict: Dictionary }) {
   }));
   return (
     <section
-      className="section-padding bg-surface-50"
+      className="section-padding bg-dark-panel"
       aria-labelledby="testimonials-heading"
     >
       <div className="container-base">
         {/* Header */}
         <div className="text-center mb-12">
-          <span className="badge bg-navy-50 text-navy-700 mb-3">
+          <span className="badge bg-dark-card text-brand mb-3">
             {dict.home.testimonials.badge}
           </span>
           <h2
@@ -45,31 +45,31 @@ export default function TestimonialsSection({ dict }: { dict: Dictionary }) {
             >
               {/* Quote mark */}
               <span
-                className="text-4xl text-gold-300 font-serif leading-none mb-3"
+                className="text-4xl text-brand-accent font-serif leading-none mb-3"
                 aria-hidden="true"
               >
                 &ldquo;
               </span>
 
               {/* Quote text */}
-              <p className="text-gray-700 text-sm leading-relaxed flex-1 mb-5">
+              <p className="text-ink-dim text-sm leading-relaxed flex-1 mb-5">
                 {quote}
               </p>
 
               {/* Attribution */}
-              <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
+              <footer className="flex items-center gap-3 pt-4 border-t border-dark-border">
                 {/* Avatar */}
                 <div
-                  className="w-10 h-10 rounded-full bg-navy-100 text-navy-700 font-bold text-sm flex items-center justify-center flex-shrink-0"
+                  className="w-10 h-10 rounded-full bg-dark-elevated text-ink-dim font-bold text-sm flex items-center justify-center flex-shrink-0"
                   aria-hidden="true"
                 >
                   {initials}
                 </div>
                 <div>
-                  <cite className="font-semibold text-navy-900 text-sm not-italic">
+                  <cite className="font-semibold text-ink text-sm not-italic">
                     {name}
                   </cite>
-                  <p className="text-xs text-gray-500 mt-0.5">{role}</p>
+                  <p className="text-xs text-ink-muted mt-0.5">{role}</p>
                 </div>
               </footer>
             </blockquote>
@@ -77,7 +77,7 @@ export default function TestimonialsSection({ dict }: { dict: Dictionary }) {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-xs text-gray-400 mt-8">
+        <p className="text-center text-xs text-ink-muted mt-8">
           {dict.home.testimonials.disclaimer}
         </p>
       </div>

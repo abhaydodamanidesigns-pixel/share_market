@@ -37,9 +37,9 @@ export default async function InvestPage({
       />
 
       {/* Regulatory disclosure banner */}
-      <div className="bg-amber-50 border-b border-amber-100">
+      <div className="bg-dark-card border-b border-dark-border">
         <div className="container-base py-3">
-          <p className="text-xs text-amber-800 text-center">
+          <p className="text-xs text-trade-warn text-center">
             {invest.regulatoryBanner}
           </p>
         </div>
@@ -47,7 +47,7 @@ export default async function InvestPage({
 
       {/* Problem explanation */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="problem-heading"
       >
         <div className="container-base">
@@ -55,10 +55,10 @@ export default async function InvestPage({
             <h2 id="problem-heading" className="section-heading mb-4">
               {invest.problem.heading}
             </h2>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-ink-dim leading-relaxed mb-4">
               {invest.problem.para1}
             </p>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-ink-dim leading-relaxed">
               {invest.problem.para2}
             </p>
           </div>
@@ -67,7 +67,7 @@ export default async function InvestPage({
 
       {/* Service highlights */}
       <section
-        className="section-padding bg-surface-50"
+        className="section-padding bg-dark-panel"
         aria-labelledby="services-heading"
       >
         <div className="container-base">
@@ -81,8 +81,8 @@ export default async function InvestPage({
             {invest.services.items.map(({ icon, title, description }) => (
               <div key={title} className="card">
                 <span className="text-3xl mb-3 block" aria-hidden="true">{icon}</span>
-                <h3 className="font-semibold text-navy-900 mb-2">{title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+                <h3 className="font-semibold text-ink mb-2">{title}</h3>
+                <p className="text-sm text-ink-dim leading-relaxed">{description}</p>
               </div>
             ))}
           </div>
@@ -91,7 +91,7 @@ export default async function InvestPage({
 
       {/* Who this is for */}
       <section
-        className="section-padding bg-white"
+        className="section-padding bg-dark-surface"
         aria-labelledby="who-heading"
       >
         <div className="container-base">
@@ -108,12 +108,12 @@ export default async function InvestPage({
             {invest.whoItsFor.items.map(({ profile, description }) => (
               <div
                 key={profile}
-                className="flex gap-4 bg-surface-50 rounded-2xl p-5 border border-gray-100"
+                className="flex gap-4 bg-dark-surface rounded-2xl p-5 border border-dark-border"
               >
-                <div className="w-2 rounded-full bg-gold-400 flex-shrink-0 self-stretch" aria-hidden="true" />
+                <div className="w-2 rounded-full bg-brand-accent flex-shrink-0 self-stretch" aria-hidden="true" />
                 <div>
-                  <h3 className="font-semibold text-navy-900 mb-1.5">{profile}</h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">{description}</p>
+                  <h3 className="font-semibold text-ink mb-1.5">{profile}</h3>
+                  <p className="text-sm text-ink-dim leading-relaxed">{description}</p>
                 </div>
               </div>
             ))}
@@ -130,19 +130,19 @@ export default async function InvestPage({
       />
 
       {/* Internal links */}
-      <section className="py-10 bg-surface-50">
+      <section className="py-10 bg-dark-panel">
         <div className="container-base">
           <div className="flex flex-wrap gap-3 justify-center">
-            <span className="text-sm text-gray-500 self-center">
+            <span className="text-sm text-ink-muted self-center">
               {invest.relatedServices.label}
             </span>
-            <Link href={`/${lang}/protect`} className="badge bg-amber-50 text-amber-700 py-1.5 px-4">
+            <Link href={`/${lang}/protect`} className="badge bg-dark-card text-trade-warn py-1.5 px-4">
               {invest.relatedServices.insurance}
             </Link>
-            <Link href={`/${lang}/learn`} className="badge bg-blue-50 text-blue-700 py-1.5 px-4">
+            <Link href={`/${lang}/learn`} className="badge bg-dark-card text-brand py-1.5 px-4">
               {invest.relatedServices.learn}
             </Link>
-            <Link href={`/${lang}/recover`} className="badge bg-rose-50 text-rose-700 py-1.5 px-4">
+            <Link href={`/${lang}/recover`} className="badge bg-dark-card text-trade-loss py-1.5 px-4">
               {invest.relatedServices.recover}
             </Link>
           </div>
