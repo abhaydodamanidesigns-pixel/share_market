@@ -1,6 +1,0 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/[lang]/page": "app/[lang]/page.js",
-  "/[lang]/protect/page": "app/[lang]/protect/page.js",
-  "/[lang]/contact/page": "app/[lang]/contact/page.js"
-}

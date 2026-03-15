@@ -54,7 +54,7 @@ export default function HeroSection({
   return (
     <section
       className={`relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden ${
-        isDark ? "gradient-navy text-ink" : "bg-dark-panel text-ink"
+        isDark ? "gradient-hero text-ink" : "bg-dark-panel text-ink"
       }`}
       aria-label="Hero section"
     >
@@ -63,16 +63,22 @@ export default function HeroSection({
         className="absolute inset-0 pointer-events-none overflow-hidden"
         aria-hidden="true"
       >
+        {/* Primary glow — top-right, indigo */}
         <div
-          className={`absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full opacity-10 blur-3xl ${
-            isDark ? "bg-brand-accent" : "bg-brand"
+          className={`absolute -top-40 -right-40 w-[700px] h-[700px] rounded-full opacity-[0.07] blur-[120px] ${
+            isDark ? "bg-indigo-500" : "bg-brand"
           }`}
         />
+        {/* Secondary glow — bottom-left, cyan */}
         <div
-          className={`absolute bottom-0 -left-20 w-[400px] h-[400px] rounded-full opacity-10 blur-3xl ${
-            isDark ? "bg-brand" : "bg-brand-accent"
+          className={`absolute -bottom-20 -left-20 w-[450px] h-[450px] rounded-full opacity-[0.08] blur-[100px] ${
+            isDark ? "bg-brand-accent" : "bg-brand-accent"
           }`}
         />
+        {/* Subtle centre radial glow */}
+        {isDark && (
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_40%_at_50%_0%,rgba(99,102,241,0.06),transparent)]" />
+        )}
       </div>
 
       <div className="container-base relative z-10">
@@ -95,7 +101,7 @@ export default function HeroSection({
             >
               {headline}{" "}
               {headlineAccent && (
-                <span className="text-brand-accent">{headlineAccent}</span>
+                <span className="gradient-text-accent">{headlineAccent}</span>
               )}
             </h1>
 

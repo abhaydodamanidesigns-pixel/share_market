@@ -5,7 +5,13 @@
       "Bash(curl:*)",
       "Bash(python3:*)",
       "Bash(cat:*)",
-      "Bash(security:*)"
+      "Bash(security:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebFetch(domain:photoclerks.com)",
+      "Bash(npx tsc:*)",
+      "Bash(git:*)"
     ]
   }
 }

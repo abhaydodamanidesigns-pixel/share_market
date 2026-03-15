@@ -8,6 +8,7 @@ import ProcessTimeline from "@/components/ProcessTimeline";
 import ArticleCard from "@/components/ArticleCard";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
+import HeroTicker from "@/components/HeroTicker";
 import { getDictionary } from "@/src/dictionaries";
 
 export const metadata: Metadata = {
@@ -103,6 +104,9 @@ export default async function HomePage({
           dict.hero.trustBadges.clientFirstEthics,
         ]}
       />
+
+      {/* 1b. Scrolling services ticker */}
+      <HeroTicker />
 
       {/* 2. Trust indicators */}
       <TrustSection
