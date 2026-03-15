@@ -11,7 +11,8 @@
       "Bash(git push:*)",
       "WebFetch(domain:photoclerks.com)",
       "Bash(npx tsc:*)",
-      "Bash(git:*)"
+      "Bash(git:*)",
+      "WebFetch(domain:bjpsaarathi.netlify.app)"
     ]
   }
 }

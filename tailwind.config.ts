@@ -14,45 +14,48 @@ const config: Config = {
         // Matching CSS custom properties are defined in globals.css :root.
 
         // Backgrounds (darkest → slightly lighter)
+        // XTrady-inspired: near-black with subtle teal tint
         dark: {
-          bg:       "#0B0F1A", // --color-bg-primary       page canvas
-          surface:  "#111827", // --color-bg-secondary     alternating sections
-          panel:    "#1A2236", // --color-bg-tertiary      inset panels / light hero
-          card:     "#141B2D", // --color-surface-primary  card backgrounds
-          elevated: "#1C253A", // --color-surface-secondary raised surfaces
-          border:   "#2A344A", // --color-border           dividers / card borders
-          hover:    "#1F2937", // --color-hover-surface    hover states
+          bg:       "#131415", // --color-bg-primary       hsl(180,2%,8%)  page canvas
+          surface:  "#1A1B1B", // --color-bg-secondary     alternating sections
+          panel:    "#1E2020", // --color-bg-tertiary      inset panels / light hero
+          card:     "#1C1C1C", // --color-surface-primary  hsl(0,0%,11%)  card backgrounds
+          elevated: "#232525", // --color-surface-secondary raised surfaces
+          border:   "#2D2F2F", // --color-border           dividers / card borders
+          hover:    "#252727", // --color-hover-surface    hover states
         },
 
-        // Brand — primary action colour (blue = trust / action)
+        // Brand — primary action colour
+        // XTrady base: hsl(154,100%,54%) = neon teal-green
+        // XTrady base-two: hsl(72,100%,64%) = neon lime
         brand: {
-          DEFAULT: "#3B82F6", // --color-primary
-          hover:   "#2563EB", // --color-primary-hover
-          accent:  "#22D3EE", // --color-accent (cyan)
+          DEFAULT: "#14FF99", // --color-primary       XTrady teal-green
+          hover:   "#0FD680", // --color-primary-hover darker teal
+          accent:  "#CBFF47", // --color-accent        XTrady lime-yellow
         },
 
-        // Trading signals
+        // Trading signals — XTrady-matched
         trade: {
-          profit: "#22C55E", // --color-profit   buy / gain
-          loss:   "#EF4444", // --color-loss     sell / loss
-          warn:   "#F59E0B", // --color-warning  caution / neutral
+          profit: "#00CC14", // --color-profit   hsl(112,100%,40%) buy / gain
+          loss:   "#F54444", // --color-loss     hsl(0,96%,63%)    sell / loss
+          warn:   "#EBA800", // --color-warning  hsl(40,100%,46%)  caution / neutral
         },
 
-        // Text hierarchy
+        // Text hierarchy — XTrady-matched
         ink: {
-          DEFAULT: "#E5E7EB", // --color-text-primary   headings / body
-          dim:     "#9CA3AF", // --color-text-secondary subtext
-          muted:   "#6B7280", // --color-text-muted     placeholders / meta
+          DEFAULT: "#EDEDED", // --color-text-primary   hsl(0,0%,93%)  headings
+          dim:     "#D9D9D9", // --color-text-secondary hsl(0,0%,85%)  body text
+          muted:   "#6C7880", // --color-text-muted     hsl(208,7%,46%) meta / placeholders
         },
 
         // Focus ring
-        focus: "#3B82F6", // --color-focus-ring
+        focus: "#14FF99", // --color-focus-ring (teal)
 
-        // Chart colours (standard trading convention)
+        // Chart colours
         chart: {
-          green: "#22C55E", // --chart-candle-green  bullish candle
-          red:   "#EF4444", // --chart-candle-red    bearish candle
-          grid:  "#1F2937", // --chart-grid          grid lines
+          green: "#00CC14", // --chart-candle-green  bullish candle
+          red:   "#F54444", // --chart-candle-red    bearish candle
+          grid:  "#252727", // --chart-grid          grid lines
         },
 
         // ── Legacy palette (kept for backward-compat if missed anywhere) ──
@@ -107,10 +110,10 @@ const config: Config = {
         "3xl": "1.5rem",
       },
       boxShadow: {
-        // Dark-mode-appropriate shadows (deep, not navy-tinted)
-        card:       "0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.3)",
-        "card-hover":"0 4px 8px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.4)",
-        nav:        "0 1px 0 rgba(0,0,0,0.4)",
+        // XTrady-style dark shadows with subtle teal glow on hover
+        card:       "0 1px 3px rgba(0,0,0,0.5), 0 4px 12px rgba(0,0,0,0.4)",
+        "card-hover":"0 4px 8px rgba(0,0,0,0.5), 0 12px 32px rgba(0,0,0,0.4), 0 0 24px rgba(20,255,153,0.06)",
+        nav:        "0 1px 0 rgba(0,0,0,0.5)",
       },
       animation: {
         "fade-up": "fadeUp 0.5s ease-out",
