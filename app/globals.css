@@ -290,6 +290,9 @@
     var(--color-dark-surface) 100%
   );
 }
+::-webkit-scrollbar-thumb:hover {
+  background: #14FF99; /* brand teal on hover */
+}
 
 /* ═══════════════════════════════════════════════════════════════════════════
    GRADIENT & MESH BACKGROUNDS
