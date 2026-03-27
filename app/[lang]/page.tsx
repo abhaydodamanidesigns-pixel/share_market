@@ -8,7 +8,7 @@ import ProcessTimeline from "@/components/ProcessTimeline";
 import ArticleCard from "@/components/ArticleCard";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
-import HeroTicker from "@/components/HeroTicker";
+import InfiniteTrustTicker from "@/components/InfiniteTrustTicker";
 import { getDictionary } from "@/src/dictionaries";
 
 export const metadata: Metadata = {
@@ -122,8 +122,8 @@ export default async function HomePage({
         secondaryCtaHref={`/${lang}/learn`}
       />
 
-      {/* 1b. Scrolling services ticker */}
-      <HeroTicker />
+      {/* 1b. Lifecycle mission ticker */}
+      <InfiniteTrustTicker />
 
       {/* 2. Trust indicators */}
       <TrustSection

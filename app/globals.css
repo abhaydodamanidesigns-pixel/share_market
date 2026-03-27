@@ -484,6 +484,42 @@
   animation: markerFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
+/* ── InfiniteTrustTicker — seamless infinite scroll ─────────────────────────
+ *
+ * WHY A PLAIN CSS CLASS (not a Tailwind keyframe entry):
+ * Tailwind keyframes are only emitted when a utility class that references
+ * them appears in a content-scanned file. A plain @keyframes in globals.css
+ * is always emitted, so the animation is guaranteed on every build.
+ *
+ * HOW THE SEAMLESS LOOP WORKS:
+ * The .ticker-track element contains TWO identical copies of the item list.
+ * Its total width is therefore 2× one copy.
+ * translateX(-50%) moves it by exactly one copy's worth → when the animation
+ * resets to 0 the visual position is identical → zero jump, zero blank gap.
+ * ──────────────────────────────────────────────────────────────────────────── */
+@keyframes ticker-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker-scroll 40s linear infinite;
+  /* GPU-composite the scroll for silky 60fps */
+  will-change: transform;
+}
+
+/* Pause on hover so users can read a specific item */
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+  }
+}
+
 /* ── AnimatedHeroBanner — ambient mesh blob drift ── */
 @keyframes meshBlob1 {
   0%, 100% { transform: translate(0%,   0%)  scale(1);    }
