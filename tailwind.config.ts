@@ -1,61 +1,77 @@
 import type { Config } from "tailwindcss";
 
+/**
+ * ARCHITECTURE NOTE — CSS Variable-backed color tokens
+ * ─────────────────────────────────────────────────────
+ * Every color used in the app that must switch between light / dark mode
+ * now references a CSS custom property defined in globals.css.
+ *
+ * Tailwind compiles  bg-dark-surface  →  background-color: var(--color-dark-surface)
+ * globals.css :root defines the LIGHT value for --color-dark-surface.
+ * globals.css .dark  defines the DARK  value for --color-dark-surface.
+ *
+ * Result: all 100+ uses of bg-dark-*, text-ink*, border-dark-* across every
+ * page and component automatically cascade with the theme — no component
+ * needs to be touched individually.
+ */
+
 const config: Config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
-        // ── Trading Platform Dark Palette ──────────────────────────────────
-        // Single source of truth: update hex here to retheme the entire app.
-        // Matching CSS custom properties are defined in globals.css :root.
+        // ── Theme-switching palette — all backed by CSS variables ────────────
+        // These are the canonical color tokens. Adding a CSS variable here
+        // means Tailwind generates  background-color: var(--xyz)  so the
+        // compiled class responds to :root / .dark without JS.
 
-        // Backgrounds (darkest → slightly lighter)
         dark: {
-          bg:       "#0B0F1A", // --color-bg-primary       page canvas
-          surface:  "#111827", // --color-bg-secondary     alternating sections
-          panel:    "#1A2236", // --color-bg-tertiary      inset panels / light hero
-          card:     "#141B2D", // --color-surface-primary  card backgrounds
-          elevated: "#1C253A", // --color-surface-secondary raised surfaces
-          border:   "#2A344A", // --color-border           dividers / card borders
-          hover:    "#1F2937", // --color-hover-surface    hover states
+          bg:       "var(--color-dark-bg)",       // page canvas
+          surface:  "var(--color-dark-surface)",  // alternating sections
+          panel:    "var(--color-dark-panel)",    // inset panels
+          card:     "var(--color-dark-card)",     // card backgrounds
+          elevated: "var(--color-dark-elevated)", // raised surfaces
+          border:   "var(--color-dark-border)",   // dividers / borders
+          hover:    "var(--color-dark-hover)",    // hover state overlays
         },
 
-        // Brand — primary action colour (blue = trust / action)
+        // Brand / action — shifts slightly between modes
         brand: {
-          DEFAULT: "#3B82F6", // --color-primary
-          hover:   "#2563EB", // --color-primary-hover
-          accent:  "#22D3EE", // --color-accent (cyan)
+          DEFAULT: "var(--color-brand)",        // primary CTA colour
+          hover:   "var(--color-brand-hover)",
+          accent:  "var(--color-brand-accent)", // secondary highlight
         },
 
-        // Trading signals
-        trade: {
-          profit: "#22C55E", // --color-profit   buy / gain
-          loss:   "#EF4444", // --color-loss     sell / loss
-          warn:   "#F59E0B", // --color-warning  caution / neutral
-        },
-
-        // Text hierarchy
+        // Text hierarchy — switches between charcoal (light) and off-white (dark)
         ink: {
-          DEFAULT: "#E5E7EB", // --color-text-primary   headings / body
-          dim:     "#9CA3AF", // --color-text-secondary subtext
-          muted:   "#6B7280", // --color-text-muted     placeholders / meta
+          DEFAULT: "var(--color-ink)",
+          dim:     "var(--color-ink-dim)",
+          muted:   "var(--color-ink-muted)",
+        },
+
+        // Trading signals — kept constant across modes for unambiguous meaning
+        trade: {
+          profit: "#22C55E",
+          loss:   "#EF4444",
+          warn:   "#F59E0B",
         },
 
         // Focus ring
-        focus: "#3B82F6", // --color-focus-ring
+        focus: "var(--color-brand)",
 
-        // Chart colours (standard trading convention)
+        // Chart candles
         chart: {
-          green: "#22C55E", // --chart-candle-green  bullish candle
-          red:   "#EF4444", // --chart-candle-red    bearish candle
-          grid:  "#1F2937", // --chart-grid          grid lines
+          green: "#22C55E",
+          red:   "#EF4444",
+          grid:  "var(--color-dark-border)",
         },
 
-        // ── Legacy palette (kept for backward-compat if missed anywhere) ──
+        // ── Legacy / extended palettes (not theme-switching) ─────────────────
         navy: {
           50:  "#eef2ff",
           100: "#dde6ff",
@@ -82,43 +98,108 @@ const config: Config = {
           900: "#624220",
           950: "#38220e",
         },
-        surface: {
-          50:  "#f8f9fc",
-          100: "#f0f2f8",
-          200: "#e4e8f4",
-        },
       },
 
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans:  ["Inter", "system-ui", "sans-serif"],
         serif: ["Georgia", "Cambria", "serif"],
       },
+
       fontSize: {
         "display-xl": ["3.75rem", { lineHeight: "1.1",  letterSpacing: "-0.02em" }],
         "display-lg": ["3rem",    { lineHeight: "1.15", letterSpacing: "-0.02em" }],
         "display-md": ["2.25rem", { lineHeight: "1.2",  letterSpacing: "-0.01em" }],
       },
+
       spacing: {
-        section:    "5rem",
+        section:      "5rem",
         "section-sm": "3rem",
       },
+
       borderRadius: {
         "2xl": "1rem",
         "3xl": "1.5rem",
       },
+
       boxShadow: {
-        // Dark-mode-appropriate shadows (deep, not navy-tinted)
-        card:       "0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.3)",
-        "card-hover":"0 4px 8px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.4)",
-        nav:        "0 1px 0 rgba(0,0,0,0.4)",
+        card:           "var(--shadow-card)",
+        "card-hover":   "var(--shadow-card-hover)",
+        nav:            "var(--shadow-nav)",
       },
+
       animation: {
-        "fade-up": "fadeUp 0.5s ease-out",
+        "fade-up":       "fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both",
+        "chart-draw":    "drawChart 1.5s cubic-bezier(0.4, 0, 0.2, 1) 0.5s forwards",
+        "ambient-pulse": "ambientPulse 8s ease-in-out infinite",
+        "scroll-reveal": "scrollReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both",
+        /* Lifecycle Mission Trust Ticker — 35 s deliberate institutional pace */
+        "ticker":        "ticker 35s linear infinite",
+
+        /* AnimatedHeroBanner — ambient mesh blob drift */
+        "mesh-1":        "meshBlob1 15s ease-in-out infinite",
+        "mesh-2":        "meshBlob2 18s ease-in-out infinite",
+        "mesh-3":        "meshBlob3 12s ease-in-out infinite",
+
+        /* AnimatedHeroBanner — floating micro-card bob */
+        "bob-up":        "microBobUp   4s ease-in-out infinite",
+        "bob-down":      "microBobDown 5s ease-in-out infinite",
+
+        /* AnimatedHeroBanner — bar chart grow */
+        "bar-grow":      "barGrow 1s cubic-bezier(0.16, 1, 0.3, 1) both",
       },
+
       keyframes: {
         fadeUp: {
           "0%":   { opacity: "0", transform: "translateY(16px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        drawChart: {
+          to: { strokeDashoffset: "0" },
+        },
+        ambientPulse: {
+          "0%, 100%": { transform: "scale(1)",    opacity: "0.35" },
+          "50%":       { transform: "scale(1.05)", opacity: "0.55" },
+        },
+        scrollReveal: {
+          "0%":   { opacity: "0", transform: "translateY(30px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        /*
+         * Ticker scroll — the track is exactly 2× the visible content width.
+         * translateX(-50%) moves precisely one full copy, so the loop is
+         * perfectly seamless with no jump or blank gap.
+         */
+        ticker: {
+          "0%":   { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+
+        /* AnimatedHeroBanner */
+        meshBlob1: {
+          "0%, 100%": { transform: "translate(0%, 0%) scale(1)" },
+          "33%":       { transform: "translate(3%, -5%) scale(1.08)" },
+          "66%":       { transform: "translate(-4%, 3%) scale(0.95)" },
+        },
+        meshBlob2: {
+          "0%, 100%": { transform: "translate(0%, 0%) scale(1)" },
+          "33%":       { transform: "translate(-5%, 4%) scale(1.06)" },
+          "66%":       { transform: "translate(3%, -3%) scale(0.97)" },
+        },
+        meshBlob3: {
+          "0%, 100%": { transform: "translate(0%, 0%) scale(1)" },
+          "50%":       { transform: "translate(4%, -4%) scale(1.05)" },
+        },
+        microBobUp: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%":       { transform: "translateY(-6px)" },
+        },
+        microBobDown: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%":       { transform: "translateY(6px)" },
+        },
+        barGrow: {
+          from: { transform: "scaleY(0)" },
+          to:   { transform: "scaleY(1)" },
         },
       },
     },

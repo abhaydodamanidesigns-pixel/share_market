@@ -1,6 +1,16 @@
 import Link from "next/link";
 import type { Dictionary } from "@/src/dictionaries";
 
+// ── SVG icons ────────────────────────────────────────────────────────────────
+function IconInfo({ className }: { className?: string }) {
+  return (
+    <svg className={className} fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6}
+        d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+  );
+}
+
 export default function Footer({
   locale = "en",
   dict,
@@ -10,7 +20,8 @@ export default function Footer({
 }) {
   const serviceLinks = dict.footer.serviceLinks;
   const companyLinks = dict.footer.companyLinks;
-  const legalLinks = dict.footer.legalLinks;
+  const legalLinks   = dict.footer.legalLinks;
+
   return (
     <footer
       className="bg-dark-bg text-ink"
@@ -20,7 +31,8 @@ export default function Footer({
       {/* Main footer content */}
       <div className="container-base py-14 md:py-18">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand column */}
+
+          {/* ── Brand column ── */}
           <div className="lg:col-span-1">
             <Link
               href={`/${locale}`}
@@ -39,21 +51,18 @@ export default function Footer({
               {dict.footer.tagline}
             </p>
 
-            {/* SEBI registration badge */}
+            {/* Educational platform badge — replaces former SEBI reg badge */}
             <div className="inline-block bg-dark-card border border-dark-border rounded-xl px-4 py-3">
               <p className="text-xs text-ink-muted font-medium">
-                {dict.footer.sebiRegNo}
+                {dict.footer.platformBadge}
               </p>
-              <p className="text-sm font-bold text-brand-accent mt-0.5">
-                INA000XXXXXX
-              </p>
-              <p className="text-xs text-ink-muted mt-1">
-                {dict.footer.amfiArn}
+              <p className="text-sm font-semibold text-brand-accent mt-0.5">
+                {dict.footer.platformNote}
               </p>
             </div>
           </div>
 
-          {/* Services */}
+          {/* ── Services ── */}
           <div>
             <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.ourServices}
@@ -72,7 +81,7 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Company */}
+          {/* ── Company ── */}
           <div>
             <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.company}
@@ -91,7 +100,7 @@ export default function Footer({
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* ── Legal ── */}
           <div>
             <h3 className="font-semibold text-ink text-sm uppercase tracking-wider mb-4">
               {dict.footer.legalCompliance}
@@ -120,17 +129,22 @@ export default function Footer({
               >
                 hello@saarthi-finance.in
               </a>
-              <p className="text-sm text-ink-dim mt-1">
-                +91 98765 43210
-              </p>
+              <p className="text-sm text-ink-dim mt-1">+91 98765 43210</p>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Compliance disclaimer */}
-      <div className="border-t border-dark-border">
+      {/* ── Mandatory educational disclaimer ── */}
+      <div className="border-t border-dark-border bg-dark-surface">
         <div className="container-base py-6">
+          <div className="flex gap-3 items-start mb-4 p-4 rounded-xl bg-dark-card border border-dark-border">
+            <IconInfo className="w-5 h-5 text-brand-accent flex-shrink-0 mt-0.5" />
+            <p className="text-sm font-medium text-ink leading-relaxed">
+              We are an educational and facilitation platform. We are not a SEBI-registered Investment Adviser
+              or Portfolio Manager. All market insights are for informational purposes only.
+            </p>
+          </div>
           <p className="text-xs text-ink-muted leading-relaxed mb-3">
             {dict.footer.disclaimer}
           </p>
@@ -140,32 +154,13 @@ export default function Footer({
         </div>
       </div>
 
-      {/* Copyright bar */}
+      {/* ── Copyright bar ── */}
       <div className="border-t border-dark-border bg-dark-bg">
         <div className="container-base py-4 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-ink-muted">
           <p>
             © {new Date().getFullYear()} {dict.common.brandName}. {dict.footer.copyright}
           </p>
-          <p>
-            {dict.footer.designedFor}{" "}
-            <a
-              href="https://www.sebi.gov.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink-dim hover:text-brand-accent transition-colors"
-            >
-              SEBI
-            </a>{" "}
-            &amp;{" "}
-            <a
-              href="https://www.irdai.gov.in"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink-dim hover:text-brand-accent transition-colors"
-            >
-              IRDAI
-            </a>
-          </p>
+          <p>{dict.footer.designedFor} Indian families.</p>
         </div>
       </div>
     </footer>

@@ -7,9 +7,9 @@ import CTASection from "@/components/CTASection";
 import { getDictionary } from "@/src/dictionaries";
 
 export const metadata: Metadata = {
-  title: "Investment Advisory Services — SEBI Registered Adviser India",
+  title: "Market Insights & Fund Facilitation — Saarthi Finance",
   description:
-    "SEBI-registered fee-only investment advisory for Indian families. Goal-based financial planning, mutual fund advisory, and portfolio review. No commissions, no conflicts of interest.",
+    "Goal-aligned market insights and fund facilitation for Indian families. Financial education, goal-based planning, and transparent guidance. No commissions, no conflicts of interest.",
 };
 
 export default async function InvestPage({
@@ -40,7 +40,7 @@ export default async function InvestPage({
       <div className="bg-dark-card border-b border-dark-border">
         <div className="container-base py-3">
           <p className="text-xs text-trade-warn text-center">
-            {invest.regulatoryBanner}
+            {invest.educationalDisclaimer}
           </p>
         </div>
       </div>

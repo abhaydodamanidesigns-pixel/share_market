@@ -2,51 +2,166 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Semantic color tokens ─────────────────────────────────────────────────
-   Single source of truth for the trading platform color system.
-   Update values here; Tailwind config mirrors them with the same hex codes.
-   ──────────────────────────────────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL THEME TOKENS — The single source of truth for ALL colors.
+
+   HOW THE CASCADE WORKS
+   ─────────────────────
+   1. tailwind.config.ts maps  dark.*  and  ink.*  to CSS vars (e.g. var(--color-dark-bg))
+   2. Tailwind compiles  bg-dark-surface  →  background-color: var(--color-dark-surface)
+   3. :root below defines the LIGHT-MODE values for every --color-dark-* variable
+   4. .dark below defines the DARK-MODE  values for the same variables
+   5. When ThemeProvider toggles  .dark  on <html>, every component self-updates
+      via CSS cascade — no JS prop drilling, no per-component rewrites.
+
+   LIGHT MODE  →  :root  (default, no class needed)
+   DARK  MODE  →  .dark  class on <html>
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── LIGHT MODE (default) ────────────────────────────────────────────────── */
 :root {
-  /* Backgrounds */
-  --color-bg-primary:         #0B0F1A;
-  --color-bg-secondary:       #111827;
-  --color-bg-tertiary:        #1A2236;
+  /* ── Backing variables for Tailwind's dark-* tokens ── */
+  /* In light mode these become clean whites and slates */
+  --color-dark-bg:        #FFFFFF;   /* page canvas          was #0B0F1A */
+  --color-dark-surface:   #F8FAFC;   /* alternating sections  was #111827 */
+  --color-dark-panel:     #F1F5F9;   /* inset panels          was #1A2236 */
+  --color-dark-card:      #FFFFFF;   /* card faces            was #141B2D */
+  --color-dark-elevated:  #F0F4F8;   /* raised surfaces       was #1C253A */
+  --color-dark-border:    #E2E8F0;   /* dividers              was #2A344A */
+  --color-dark-hover:     #EFF6FF;   /* hover overlays        was #1F2937 */
 
-  /* Surfaces / cards */
-  --color-surface-primary:    #141B2D;
-  --color-surface-secondary:  #1C253A;
+  /* ── Text hierarchy ── */
+  --color-ink:            #1F2937;   /* WCAG AAA on white     was #E5E7EB */
+  --color-ink-dim:        #475569;   /*                       was #9CA3AF */
+  --color-ink-muted:      #94A3B8;   /*                       was #6B7280 */
 
-  /* Primary brand (trust / action) */
-  --color-primary:            #3B82F6;
-  --color-primary-hover:      #2563EB;
+  /* ── Brand / action ── */
+  --color-brand:          #1D4ED8;   /* Deep Trust Blue       was #3B82F6 */
+  --color-brand-hover:    #1E40AF;
+  --color-brand-accent:   #3B82F6;   /* Vibrant Blue          was #22D3EE */
 
-  /* Secondary accent */
-  --color-accent:             #22D3EE;
+  /* ── Semantic signals ── */
+  --color-positive:       #15803D;
+  --color-negative:       #B91C1C;
+  --color-warning:        #B45309;
 
-  /* Trading signals */
-  --color-profit:             #22C55E;
-  --color-loss:               #EF4444;
-  --color-warning:            #F59E0B;
+  /* ── Chart / financial data ── */
+  --chart-candle-green:   #15803D;
+  --chart-candle-red:     #B91C1C;
 
-  /* Text */
-  --color-text-primary:       #E5E7EB;
-  --color-text-secondary:     #9CA3AF;
-  --color-text-muted:         #6B7280;
+  /* ── Shadows — lighter for the airy light theme ── */
+  --shadow-card:          0 1px 3px rgba(0,0,0,0.07), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-card-hover:    0 4px 12px rgba(0,0,0,0.10), 0 16px 40px rgba(0,0,0,0.08);
+  --shadow-nav:           0 1px 0 rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.05);
 
-  /* Border / divider */
-  --color-border:             #2A344A;
+  /* ── Navigation backdrop ── */
+  --nav-bg:               rgba(255, 255, 255, 0.82);
+  --nav-border:           rgba(226, 232, 240, 0.80);
 
-  /* Chart colours */
-  --chart-candle-green:       #22C55E;
-  --chart-candle-red:         #EF4444;
-  --chart-grid:               #1F2937;
+  /* ── Semantic bg/text for migrated components ── */
+  --bg-primary:           #FFFFFF;
+  --bg-secondary:         #F8FAFC;
+  --surface:              #FFFFFF;
+  --surface-hover:        #EFF6FF;
+  --text-primary:         #1F2937;
+  --text-secondary:       #475569;
+  --text-muted:           #94A3B8;
+  --border:               #E2E8F0;
+  --border-strong:        #CBD5E1;
+  --brand:                #1D4ED8;
+  --brand-hover:          #1E40AF;
+  --accent:               #3B82F6;
+  --positive:             #15803D;
+  --negative:             #B91C1C;
 
-  /* Interaction */
-  --color-focus-ring:         #3B82F6;
-  --color-hover-surface:      #1F2937;
+  /* ── AnimatedHeroBanner tokens ── */
+  --bg-surface:           #F8FAFC;
+  --ambient-glow:         rgba(37, 99, 235, 0.05);
+  --hero-blob-1:          rgba(29,  78, 216, 0.18);
+  --hero-blob-2:          rgba(99,  54, 220, 0.10);
+  --hero-blob-3:          rgba(59, 130, 246, 0.09);
+  --glass-bg:             rgba(255, 255, 255, 0.78);
+  --glass-border:         rgba(0, 0, 0, 0.08);
+  --glass-inner:          rgba(255, 255, 255, 0.60);
+  --micro-card-bg:        rgba(255, 255, 255, 0.88);
+  --micro-card-border:    rgba(226, 232, 240, 0.90);
+  --bar-color-a:          rgba(29,  78, 216, 0.55);
+  --bar-color-b:          #1D4ED8;
 }
 
-/* ── Base resets & typographic defaults ── */
+/* ── DARK MODE — applied when ThemeProvider adds .dark to <html> ─────────── */
+.dark {
+  /* ── dark-* tokens return to their original night-mode values ── */
+  --color-dark-bg:        #0B0F1A;
+  --color-dark-surface:   #111827;
+  --color-dark-panel:     #1A2236;
+  --color-dark-card:      #141B2D;
+  --color-dark-elevated:  #1C253A;
+  --color-dark-border:    #2A344A;
+  --color-dark-hover:     #1F2937;
+
+  /* ── Text ── */
+  --color-ink:            #E5E7EB;
+  --color-ink-dim:        #9CA3AF;
+  --color-ink-muted:      #6B7280;
+
+  /* ── Brand ── */
+  --color-brand:          #3B82F6;
+  --color-brand-hover:    #2563EB;
+  --color-brand-accent:   #22D3EE;
+
+  /* ── Semantic signals ── */
+  --color-positive:       #22C55E;
+  --color-negative:       #EF4444;
+  --color-warning:        #F59E0B;
+
+  /* ── Chart ── */
+  --chart-candle-green:   #22C55E;
+  --chart-candle-red:     #EF4444;
+
+  /* ── Shadows — deep for dark dashboard feel ── */
+  --shadow-card:          0 1px 3px rgba(0,0,0,0.4), 0 4px 12px rgba(0,0,0,0.3);
+  --shadow-card-hover:    0 4px 8px rgba(0,0,0,0.4), 0 12px 32px rgba(0,0,0,0.4);
+  --shadow-nav:           0 1px 0 rgba(0,0,0,0.4);
+
+  /* ── Navigation ── */
+  --nav-bg:               rgba(15, 23, 42, 0.85);
+  --nav-border:           rgba(42, 52, 74, 0.80);
+
+  /* ── Semantic (for migrated components) ── */
+  --bg-primary:           #0F172A;
+  --bg-secondary:         #1E293B;
+  --surface:              #1E293B;
+  --surface-hover:        #27344D;
+  --text-primary:         #F8FAFC;
+  --text-secondary:       #94A3B8;
+  --text-muted:           #64748B;
+  --border:               #2A344A;
+  --border-strong:        #334155;
+  --brand:                #3B82F6;
+  --brand-hover:          #2563EB;
+  --accent:               #60A5FA;
+  --positive:             #22C55E;
+  --negative:             #EF4444;
+
+  /* ── AnimatedHeroBanner tokens ── */
+  --bg-surface:           #1E293B;
+  --ambient-glow:         rgba(167, 139, 250, 0.20);
+  --hero-blob-1:          rgba(59,  130, 246, 0.22);
+  --hero-blob-2:          rgba(139,  92, 246, 0.14);
+  --hero-blob-3:          rgba(96,  165, 250, 0.10);
+  --glass-bg:             rgba(20,  27,  45,  0.75);
+  --glass-border:         rgba(59,  130, 246, 0.18);
+  --glass-inner:          rgba(30,  41,  59,  0.65);
+  --micro-card-bg:        rgba(20,  27,  45,  0.85);
+  --micro-card-border:    rgba(42,  52,  74,  0.85);
+  --bar-color-a:          rgba(59,  130, 246, 0.40);
+  --bar-color-b:          #3B82F6;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   BASE LAYER
+   ═══════════════════════════════════════════════════════════════════════════ */
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -55,138 +170,372 @@
   }
 
   body {
-    @apply bg-dark-bg text-ink font-sans;
+    /* Use semantic vars — NOT hardcoded dark classes */
+    background-color: var(--color-dark-bg);
+    color:            var(--color-ink);
+    font-family:      "Inter", system-ui, sans-serif;
+    /* Silky theme transition on bg and color only (avoids lag on all props) */
+    transition:
+      background-color 400ms cubic-bezier(0.4, 0, 0.2, 1),
+      color            400ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-ink;
+    color: var(--color-ink);
+    @apply font-semibold tracking-tight;
   }
 
   a {
     @apply transition-colors duration-200;
   }
 
-  /* Focus ring for accessibility */
+  /* Financial data — prevent layout shift on numbers/tickers */
+  .tabular-nums,
+  [data-ticker],
+  .market-price,
+  .financial-figure,
+  td[data-type="number"] {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
   :focus-visible {
-    @apply outline-none ring-2 ring-brand ring-offset-2 ring-offset-dark-bg;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-brand), 0 0 0 4px var(--color-dark-bg);
   }
 }
 
-/* ── Reusable utility classes ── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   COMPONENT UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
 @layer components {
-  /* Container with consistent horizontal padding */
   .container-base {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Section vertical spacing */
   .section-padding {
     @apply py-16 md:py-24;
   }
 
-  /* Primary button — blue (trust / action) */
+  /* ── Buttons ── */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2
-           bg-brand text-white font-semibold
-           px-6 py-3 rounded-xl
-           hover:bg-brand-hover active:bg-brand-hover
-           transition-all duration-200
-           shadow-sm hover:shadow-card;
+           font-semibold px-6 py-3 rounded-xl
+           transition-all duration-200 text-white;
+    background-color: var(--color-brand);
+    box-shadow: var(--shadow-card);
   }
+  .btn-primary:hover {
+    background-color: var(--color-brand-hover);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active { transform: translateY(0); }
 
-  /* Secondary / outline button */
   .btn-secondary {
     @apply inline-flex items-center justify-center gap-2
-           border-2 border-dark-border text-ink font-semibold
-           px-6 py-3 rounded-xl
-           hover:bg-dark-hover active:bg-dark-panel
+           font-semibold px-6 py-3 rounded-xl
            transition-all duration-200;
+    border: 2px solid var(--color-dark-border);
+    color:  var(--color-ink);
+    background-color: transparent;
+  }
+  .btn-secondary:hover {
+    background-color: var(--color-dark-hover);
+    border-color: var(--color-ink-muted);
   }
 
-  /* Accent button — also blue for primary CTA consistency */
-  .btn-accent {
-    @apply inline-flex items-center justify-center gap-2
-           bg-brand text-white font-semibold
-           px-6 py-3 rounded-xl
-           hover:bg-brand-hover active:bg-brand-hover
-           transition-all duration-200
-           shadow-sm hover:shadow-card;
-  }
+  .btn-accent { @apply btn-primary; }
 
-  /* Card base */
+  /* ── Cards ── */
   .card {
-    @apply bg-dark-card rounded-2xl border border-dark-border p-6
-           transition-shadow duration-300 hover:shadow-card-hover;
+    background-color: var(--color-dark-card);
+    border: 1px solid var(--color-dark-border);
+    box-shadow: var(--shadow-card);
+    @apply rounded-2xl p-6 transition-all duration-300;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
   }
 
-  /* Badge / pill */
+  /* ── Badges ── */
   .badge {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold;
   }
 
-  /* Section heading */
+  /* ── Section headings ── */
   .section-heading {
-    @apply text-3xl md:text-4xl font-bold text-ink tracking-tight;
+    @apply text-3xl md:text-4xl font-bold tracking-tight;
+    color: var(--color-ink);
   }
 
   .section-subheading {
-    @apply text-lg text-ink-dim mt-3 max-w-2xl;
+    @apply text-lg mt-3 max-w-2xl;
+    color: var(--color-ink-dim);
   }
 }
 
-/* ── Custom scrollbar ── */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #111827; /* dark-surface */
-}
-::-webkit-scrollbar-thumb {
-  background: #2A344A; /* dark-border */
-  border-radius: 3px;
+/* ═══════════════════════════════════════════════════════════════════════════
+   SECTION ALTERNATING PATTERN
+   Use .bg-dark-bg / .bg-dark-surface / .bg-dark-panel on <section> tags.
+   They all point to CSS vars above, so light/dark switching is automatic.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Section divider gradient between major page sections */
+.section-divider {
+  background: linear-gradient(
+    180deg,
+    var(--color-dark-bg)      0%,
+    var(--color-dark-surface) 100%
+  );
 }
 
-/* ── Gradient helpers ── */
+/* ═══════════════════════════════════════════════════════════════════════════
+   GRADIENT & MESH BACKGROUNDS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Mesh background — used on data/trading sections */
+.mesh-bg-dark {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(59, 130, 246, 0.10) 0%, transparent 55%),
+    radial-gradient(ellipse at 10% 80%, rgba(34, 197,  94, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 55% 55%, rgba(34, 211, 238, 0.05) 0%, transparent 45%),
+    var(--color-dark-bg);  /* Was hardcoded #0B0E14 — now uses the switching var */
+}
+
+/* Light-mode mesh: much softer blue wash */
+:root:not(.dark) .mesh-bg-dark {
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(29, 78, 216, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 10% 80%, rgba(29, 78, 216, 0.02) 0%, transparent 60%),
+    var(--color-dark-bg);
+}
+
+/* Navy gradient (used by CTASection gradient-navy) */
 .gradient-navy {
   background: linear-gradient(
     135deg,
-    var(--color-bg-primary)      0%,
-    var(--color-bg-secondary)    60%,
-    var(--color-surface-primary) 100%
+    var(--color-dark-bg)      0%,
+    var(--color-dark-surface) 60%,
+    var(--color-dark-card)    100%
   );
 }
 
 .gradient-surface {
   background: linear-gradient(
     180deg,
-    var(--color-bg-secondary) 0%,
-    var(--color-bg-tertiary)  100%
+    var(--color-dark-surface) 0%,
+    var(--color-dark-panel)   100%
   );
 }
 
-/* ── Animation utilities ── */
-.animate-in {
-  animation: fadeUp 0.5s ease-out both;
+/* ── Glassmorphism card ── */
+.glass-card {
+  background: rgba(20, 27, 45, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(42, 52, 74, 0.40);
+  transition: background 300ms cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Light-mode glass: frosted white */
+:root:not(.dark) .glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.80);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 16px rgba(0,0,0,0.04);
+}
+
+/* ── Gradient border card (CTA card in dark mode) ── */
+.gradient-border-card {
+  position: relative;
+  background: var(--color-dark-card);
+  border-radius: 1rem;
+}
+.gradient-border-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(59,130,246,0.6) 0%,
+    rgba(148,163,184,0.2) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  mask:         linear-gradient(#fff 0 0) content-box,
+                linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ── Hero dark ambient spotlight ── */
+.dark .hero-spotlight {
+  background: radial-gradient(
+    ellipse 70% 50% at 50% 40%,
+    rgba(37, 99, 235, 0.15) 0%,
+    transparent 70%
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   TEXT GRADIENT UTILITIES
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Hero headline accent — "Indian Families" */
+.hero-accent-text {
+  background: linear-gradient(135deg, #1D4ED8 0%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.dark .hero-accent-text {
+  background: linear-gradient(135deg, #3B82F6 0%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Trading / data UI gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #22D3EE 0%, #3B82F6 50%, #818CF8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FLUID HERO TYPOGRAPHY
+   ═══════════════════════════════════════════════════════════════════════════ */
+.text-hero {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  font-weight: 800;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* SVG chart draw — controlled by stroke-dashoffset */
+@keyframes drawChart {
+  to { stroke-dashoffset: 0; }
+}
+
+/* Ambient background pulse — "breathing, live market" feel */
+@keyframes ambientPulse {
+  0%, 100% { transform: scale(1);    opacity: 0.35; }
+  50%       { transform: scale(1.05); opacity: 0.55; }
+}
+
+/* Floating data-point markers on the chart */
+@keyframes markerFadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1);   }
+}
+
+/* Generic scroll-reveal for below-fold sections */
+@keyframes scrollReveal {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Staggered hero text reveal */
+@keyframes heroReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* Generic fade-up */
 @keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0);    }
 }
 
+/* Ticker pulse for live market data */
 @keyframes heroTickerPulse {
-  0%, 100% {
-    opacity: 0.7;
-    transform: translateY(0);
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-1px);
-  }
+  0%, 100% { opacity: 0.7; transform: translateY(0);   }
+  50%       { opacity: 1;   transform: translateY(-1px); }
 }
+
+/* ── Staggered reveal delay helpers ── */
+.hero-reveal-1 { animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0ms   both; }
+.hero-reveal-2 { animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 150ms both; }
+.hero-reveal-3 { animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 300ms both; }
+.hero-reveal-4 { animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) 450ms both; }
+
+.animate-in     { animation: fadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.scroll-reveal  { animation: scrollReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Chart dot marker animation (uses animation-delay set inline) ── */
+.chart-marker {
+  animation: markerFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── AnimatedHeroBanner — ambient mesh blob drift ── */
+@keyframes meshBlob1 {
+  0%, 100% { transform: translate(0%,   0%)  scale(1);    }
+  33%       { transform: translate(3%,  -5%)  scale(1.08); }
+  66%       { transform: translate(-4%,  3%)  scale(0.95); }
+}
+@keyframes meshBlob2 {
+  0%, 100% { transform: translate(0%,   0%)  scale(1);    }
+  33%       { transform: translate(-5%,  4%)  scale(1.06); }
+  66%       { transform: translate(3%,  -3%)  scale(0.97); }
+}
+@keyframes meshBlob3 {
+  0%, 100% { transform: translate(0%,   0%)  scale(1);    }
+  50%       { transform: translate(4%,  -4%)  scale(1.05); }
+}
+
+/* ── AnimatedHeroBanner — floating micro-card bob ── */
+@keyframes microBobUp {
+  0%, 100% { transform: translateY(0px);  }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes microBobDown {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ── AnimatedHeroBanner — bar chart scaleY grow ── */
+@keyframes barGrow {
+  from { transform: scaleY(0); }
+  to   { transform: scaleY(1); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLL REVEAL — IntersectionObserver utility
+   Add data-reveal to any section; JS in ScrollReveal.tsx handles the class.
+   ═══════════════════════════════════════════════════════════════════════════ */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity  600ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+[data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-dark-surface); }
+::-webkit-scrollbar-thumb {
+  background: var(--color-dark-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-ink-muted); }

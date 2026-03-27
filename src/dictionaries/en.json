@@ -22,16 +22,16 @@
     "bookConsultation": "Book Free Consultation"
   },
   "hero": {
-    "eyebrow": "SEBI Registered · IRDAI Authorised · AMFI Registered",
+    "eyebrow": "Financial Education · Market Insights · Asset Facilitation",
     "headline": "Your Financial Lifecycle Partner",
     "headlineAccent": "for Indian Families",
     "subtext": "From understanding money to investing wisely, protecting your family, and recovering lost assets — Saarthi Finance walks with you through every stage of your financial journey.",
-    "regulatedRecognised": "Regulated & Recognised",
+    "regulatedRecognised": "Trusted & Transparent",
     "trustBadges": {
-      "sebiAdviser": "SEBI Registered Adviser",
-      "irdaiPosp": "IRDAI Authorised POSP",
-      "amfiRegistered": "AMFI Registered",
-      "clientFirstEthics": "Client-First Ethics"
+      "sebiAdviser": "Financial Education",
+      "irdaiPosp": "Market Insights",
+      "amfiRegistered": "Asset Facilitation",
+      "clientFirstEthics": "Wealth Frameworks"
     }
   },
   "cta": {
@@ -39,26 +39,26 @@
     "subtitle": "Book a free 30-minute consultation. No commitment. No jargon. Just a honest conversation about your financial goals.",
     "ctaLabel": "Book Free Consultation",
     "secondaryLabel": "Learn About Our Services",
-    "note": "No commitment required · Free first session · SEBI Regulated"
+    "note": "No commitment required · Free first session · Education-first approach"
   },
   "trust": {
-    "title": "Regulated. Transparent. Trustworthy.",
-    "subtitle": "We operate under strict regulatory oversight so you can focus on what matters — your financial wellbeing.",
+    "title": "Transparent. Trusted. Education-First.",
+    "subtitle": "We operate with complete transparency so you can focus on what matters — your financial wellbeing and education.",
     "items": [
       {
-        "title": "SEBI Registered",
-        "description": "Investment Adviser",
-        "detail": "Reg. No. INA000XXXXXX"
+        "title": "Financial Education",
+        "description": "Market Insights Platform",
+        "detail": "Education-first approach"
       },
       {
-        "title": "IRDAI Authorised",
-        "description": "Insurance POSP",
-        "detail": "POSP Code: XXXXXXXX"
+        "title": "Asset Facilitation",
+        "description": "Insurance Education",
+        "detail": "Facilitation partner"
       },
       {
-        "title": "AMFI Registered",
-        "description": "Mutual Fund Distributor",
-        "detail": "ARN: XXXXXXX"
+        "title": "Market Insights",
+        "description": "Fund Facilitation",
+        "detail": "Goal-aligned guidance"
       },
       {
         "title": "Client-First",
@@ -66,17 +66,17 @@
         "detail": "Your interest, always first"
       },
       {
-        "title": "BSE Member",
-        "description": "Member ID: XXXXXX",
-        "detail": "For advisory reference only"
+        "title": "Transparent Operations",
+        "description": "Zero Commission Conflicts",
+        "detail": "Fully fee-transparent"
       },
       {
-        "title": "SEBI Grievance",
-        "description": "SCORES Portal",
-        "detail": "scores.gov.in"
+        "title": "Investor Support",
+        "description": "Dedicated Support Portal",
+        "detail": "support.saarthi-finance.in"
       }
     ],
-    "disclaimer": "Registration with SEBI does not guarantee the quality of advice or returns. Investors should independently evaluate advice. For grievances, contact",
+    "disclaimer": "We are a financial education and facilitation platform. All content is for informational purposes only and does not constitute investment advice. For any concerns, contact",
     "scores": "SCORES"
   },
   "lifecycle": {
@@ -98,7 +98,7 @@
         "description": "Get structured investment advisory aligned with your risk profile, time horizon, and real-life goals — not market noise.",
         "features": [
           "Risk profiling & goal mapping",
-          "Mutual fund advisory (SEBI RIA)",
+          "Goal-aligned fund facilitation",
           "Portfolio review & rebalancing"
         ]
       },
@@ -125,7 +125,7 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "SEBI Registered · IRDAI Authorised · AMFI Registered",
+      "eyebrow": "Financial Education · Market Insights · Asset Facilitation",
       "headline": "Your Financial Lifecycle Partner",
       "headlineAccent": "for Indian Families",
       "subtext": "From understanding money to investing wisely, protecting your family, and recovering lost assets — Saarthi Finance walks with you through every stage of your financial journey."
@@ -142,13 +142,13 @@
       },
       {
         "title": "Investment Advisory",
-        "description": "Structured, risk-based advisory on mutual funds and other regulated instruments. SEBI-registered advice aligned with your life goals — not market timing.",
-        "tag": "SEBI Registered"
+        "description": "Goal-aligned market insights on mutual funds and other instruments. Structured facilitation aligned with your life goals — not market timing.",
+        "tag": "Market Insights"
       },
       {
         "title": "Insurance Advisory",
         "description": "Unbiased assessment of your life, health, and critical illness insurance needs. We help you protect what matters — without over-insuring or under-insuring.",
-        "tag": "IRDAI Authorised"
+        "tag": "Asset Facilitation"
       },
       {
         "title": "Recover & Regularise",
@@ -158,13 +158,13 @@
     ],
     "whyUs": {
       "badge": "Why Saarthi Finance",
-      "heading": "Advice You Can Trust. Backed by Regulation.",
+      "heading": "Insights You Can Trust. Built on Education.",
       "description": "The financial services industry can be overwhelming — full of jargon, conflicts of interest, and products designed for commissions rather than your needs. We built Saarthi Finance to be different: transparent, fee-based, and genuinely family-oriented."
     },
     "whyChooseUs": [
       {
-        "title": "Conflict-Free Advice",
-        "description": "As a SEBI-registered RIA, we charge fees for advice — not commissions on products sold. Your interest is our only priority."
+        "title": "Conflict-Free Guidance",
+        "description": "We operate on education-first principles — not commissions on products sold. Your interest is our only priority."
       },
       {
         "title": "Education Before Action",
@@ -175,8 +175,8 @@
         "description": "Financial planning isn't individual — it affects families. We consider succession, protection, and long-term wellbeing holistically."
       },
       {
-        "title": "Full Regulatory Compliance",
-        "description": "SEBI, IRDAI, and AMFI registered. We operate within strict regulatory frameworks so you don't have to worry about compliance."
+        "title": "Transparent Operations",
+        "description": "We operate with full transparency and integrity within applicable frameworks so you can focus on your goals — not paperwork."
       }
     ],
     "process": {
@@ -220,7 +220,7 @@
       {
         "category": "Recover",
         "title": "Dematerialising Physical Share Certificates: What Families Need to Know",
-        "excerpt": "Physical share certificates are valid but increasingly difficult to trade or transfer. SEBI has mandated demat for new transfers. Here's a clear guide to converting your old paper certificates."
+        "excerpt": "Physical share certificates are valid but increasingly difficult to trade or transfer. Demat conversion is now essential for transfers. Here’s a clear guide to converting your old paper certificates."
       }
     ],
     "testimonials": {
@@ -248,36 +248,75 @@
     }
   },
   "footer": {
-    "tagline": "Your Financial Lifecycle Partner for Families. SEBI Registered Investment Adviser (RIA) helping you learn, invest, protect, and recover — at every life stage.",
-    "sebiRegNo": "SEBI Reg. No.",
-    "amfiArn": "AMFI ARN: XXXXXXX",
+    "tagline": "Your Financial Lifecycle Partner for Families. An educational and facilitation platform helping you learn, invest wisely, protect your wealth, and recover lost assets — at every life stage.",
     "ourServices": "Our Services",
     "company": "Company",
     "legalCompliance": "Legal & Compliance",
     "getInTouch": "Get in Touch",
     "serviceLinks": [
-      { "path": "/learn", "label": "Financial Education" },
-      { "path": "/invest", "label": "Investment Advisory" },
-      { "path": "/protect", "label": "Insurance Advisory" },
-      { "path": "/recover", "label": "IEPF Claim Assistance" },
-      { "path": "/recover#physical-shares", "label": "Share Dematerialisation" }
+      {
+        "path": "/learn",
+        "label": "Financial Education"
+      },
+      {
+        "path": "/invest",
+        "label": "Market Insights"
+      },
+      {
+        "path": "/protect",
+        "label": "Insurance Advisory"
+      },
+      {
+        "path": "/recover",
+        "label": "IEPF Claim Assistance"
+      },
+      {
+        "path": "/recover#physical-shares",
+        "label": "Share Dematerialisation"
+      }
     ],
     "companyLinks": [
-      { "path": "/about", "label": "About Us" },
-      { "path": "/resources", "label": "Resources & Blog" },
-      { "path": "/contact", "label": "Contact Us" },
-      { "path": "/compliance", "label": "Compliance & Disclosures" }
+      {
+        "path": "/about",
+        "label": "About Us"
+      },
+      {
+        "path": "/resources",
+        "label": "Resources & Blog"
+      },
+      {
+        "path": "/contact",
+        "label": "Contact Us"
+      },
+      {
+        "path": "/compliance",
+        "label": "Compliance & Disclosures"
+      }
     ],
     "legalLinks": [
-      { "path": "/compliance", "label": "SEBI Disclosures" },
-      { "path": "/compliance#privacy", "label": "Privacy Policy" },
-      { "path": "/compliance#terms", "label": "Terms of Use" },
-      { "path": "/compliance#grievance", "label": "Grievance Redressal" }
+      {
+        "path": "/compliance",
+        "label": "Legal Disclosures"
+      },
+      {
+        "path": "/compliance#privacy",
+        "label": "Privacy Policy"
+      },
+      {
+        "path": "/compliance#terms",
+        "label": "Terms of Use"
+      },
+      {
+        "path": "/compliance#grievance",
+        "label": "Grievance Redressal"
+      }
     ],
-    "disclaimer": "Important Disclosure: Saarthi Finance is a SEBI Registered Investment Adviser. Investment in securities market is subject to market risks. Read all related documents carefully before investing. Past performance is not an indicator of future returns. The information provided on this website is for educational purposes only and does not constitute financial advice. Please consult your adviser before making any investment decisions.",
-    "disclaimerInsurance": "Insurance advisory services are offered as a POSP (Point of Salesperson) and are subject to IRDAI regulations. IEPF claim assistance is a facilitation service.",
+    "disclaimer": "We are an educational and facilitation platform. We are not a SEBI-registered Investment Adviser or Portfolio Manager. All market insights are for informational purposes only and do not constitute financial advice. Investment in securities market is subject to market risks. Past performance is not indicative of future returns. Please consult a qualified financial adviser before making investment decisions.",
+    "disclaimerInsurance": "Insurance facilitation services are for informational and educational purposes. IEPF and asset recovery is a facilitation service. All insurance decisions should be made in consultation with a licensed insurance adviser.",
     "copyright": "All rights reserved.",
-    "designedFor": "Designed for Indian families. Regulated by"
+    "designedFor": "Designed for Indian families. Committed to",
+    "platformBadge": "Financial Education Platform",
+    "platformNote": "Education · Insights · Facilitation"
   },
   "articleCard": {
     "readSuffix": "read",
@@ -297,59 +336,146 @@
     "whyPara2": "At Saarthi Finance, we believe every advisory relationship should start with education. Before we recommend anything, we want you to understand what it is, why it might suit you, and what the risks are.",
     "whyPara3": "Our educational resources are written specifically for Indian families — not adapted from American or British finance content. We cover Indian regulations, Indian tax laws, and Indian financial products.",
     "stats": [
-      { "number": "50+", "label": "Educational Articles" },
-      { "number": "8", "label": "Core Topic Areas" },
-      { "number": "100%", "label": "Free to Access" },
-      { "number": "India", "label": "Specific Context" }
+      {
+        "number": "50+",
+        "label": "Educational Articles"
+      },
+      {
+        "number": "8",
+        "label": "Core Topic Areas"
+      },
+      {
+        "number": "100%",
+        "label": "Free to Access"
+      },
+      {
+        "number": "India",
+        "label": "Specific Context"
+      }
     ],
     "topicsHeading": "Core Learning Topics",
     "topicsSubheading": "Organised by complexity level so you can start where you are and build from there.",
     "educationTopics": [
-      { "title": "Basics of Financial Planning", "description": "Understand the fundamentals: budgeting, emergency funds, goal-setting, and the difference between saving and investing.", "href": "/resources/financial-planning-basics", "level": "Beginner" },
-      { "title": "Understanding Mutual Funds", "description": "How mutual funds work, different fund categories, NAV, expense ratios, SIPs vs lump sums — everything you need before you invest.", "href": "/resources/mutual-funds-guide", "level": "Beginner" },
-      { "title": "Insurance Fundamentals", "description": "Term life, health, critical illness, and ULIPs explained. Learn how to calculate the right coverage and avoid common traps.", "href": "/resources/insurance-guide", "level": "Beginner" },
-      { "title": "Tax & Investment Interaction", "description": "How LTCG, STCG, Section 80C, 80D, and ELSS work — and how to plan your investments to be tax-efficient without distorting your portfolio.", "href": "/resources/tax-investing", "level": "Intermediate" },
-      { "title": "Real Estate vs Financial Assets", "description": "A balanced, data-led comparison between property and financial investments. Understanding liquidity, yield, and concentration risk.", "href": "/resources/real-estate-vs-financial-assets", "level": "Intermediate" },
-      { "title": "Family Financial Planning", "description": "How to plan finances as a family unit — joint goals, succession planning, inheritance, and protecting dependants at every life stage.", "href": "/resources/family-financial-planning", "level": "Intermediate" },
-      { "title": "Wills, Nominations & Succession", "description": "Why nominations matter, how to write a will, and how to ensure your assets are transferred smoothly to your loved ones.", "href": "/resources/succession-planning", "level": "Advanced" },
-      { "title": "Portfolio Review & Rebalancing", "description": "When and how to review your portfolio, what rebalancing means, and why staying the course during market volatility is usually the right answer.", "href": "/resources/portfolio-rebalancing", "level": "Advanced" }
+      {
+        "title": "Basics of Financial Planning",
+        "description": "Understand the fundamentals: budgeting, emergency funds, goal-setting, and the difference between saving and investing.",
+        "href": "/resources/financial-planning-basics",
+        "level": "Beginner"
+      },
+      {
+        "title": "Understanding Mutual Funds",
+        "description": "How mutual funds work, different fund categories, NAV, expense ratios, SIPs vs lump sums — everything you need before you invest.",
+        "href": "/resources/mutual-funds-guide",
+        "level": "Beginner"
+      },
+      {
+        "title": "Insurance Fundamentals",
+        "description": "Term life, health, critical illness, and ULIPs explained. Learn how to calculate the right coverage and avoid common traps.",
+        "href": "/resources/insurance-guide",
+        "level": "Beginner"
+      },
+      {
+        "title": "Tax & Investment Interaction",
+        "description": "How LTCG, STCG, Section 80C, 80D, and ELSS work — and how to plan your investments to be tax-efficient without distorting your portfolio.",
+        "href": "/resources/tax-investing",
+        "level": "Intermediate"
+      },
+      {
+        "title": "Real Estate vs Financial Assets",
+        "description": "A balanced, data-led comparison between property and financial investments. Understanding liquidity, yield, and concentration risk.",
+        "href": "/resources/real-estate-vs-financial-assets",
+        "level": "Intermediate"
+      },
+      {
+        "title": "Family Financial Planning",
+        "description": "How to plan finances as a family unit — joint goals, succession planning, inheritance, and protecting dependants at every life stage.",
+        "href": "/resources/family-financial-planning",
+        "level": "Intermediate"
+      },
+      {
+        "title": "Wills, Nominations & Succession",
+        "description": "Why nominations matter, how to write a will, and how to ensure your assets are transferred smoothly to your loved ones.",
+        "href": "/resources/succession-planning",
+        "level": "Advanced"
+      },
+      {
+        "title": "Portfolio Review & Rebalancing",
+        "description": "When and how to review your portfolio, what rebalancing means, and why staying the course during market volatility is usually the right answer.",
+        "href": "/resources/portfolio-rebalancing",
+        "level": "Advanced"
+      }
     ],
     "featuredHeading": "Start Reading",
     "featuredSubheading": "Our most-read guides for families new to structured financial planning.",
     "allArticles": "All articles",
     "featuredArticles": [
-      { "slug": "goal-based-investing-india", "category": "Planning", "title": "Goal-Based Investing: Why Your Portfolio Should Have a Purpose", "excerpt": "Investing without a goal is like driving without a destination. Here's how to build an investment portfolio around your actual life goals — child's education, retirement, home purchase.", "readTime": "7 min", "date": "2024-11-20", "coverEmoji": "🎯" },
-      { "slug": "sip-myths-india", "category": "Mutual Funds", "title": "5 Common SIP Myths That Could Cost Indian Families Money", "excerpt": "SIPs are powerful tools, but misconceptions about how they work lead to poor decisions. We address the five most common myths with clear explanations.", "readTime": "5 min", "date": "2024-11-05", "coverEmoji": "💡" },
-      { "slug": "emergency-fund-guide", "category": "Planning", "title": "Building Your Emergency Fund: How Much is Enough?", "excerpt": "An emergency fund is the most important financial tool most families overlook. Learn how to size yours correctly and where to keep it for safety and accessibility.", "readTime": "4 min", "date": "2024-10-22", "coverEmoji": "🏦" }
+      {
+        "slug": "goal-based-investing-india",
+        "category": "Planning",
+        "title": "Goal-Based Investing: Why Your Portfolio Should Have a Purpose",
+        "excerpt": "Investing without a goal is like driving without a destination. Here's how to build an investment portfolio around your actual life goals — child's education, retirement, home purchase.",
+        "readTime": "7 min",
+        "date": "2024-11-20",
+        "coverEmoji": "🎯"
+      },
+      {
+        "slug": "sip-myths-india",
+        "category": "Mutual Funds",
+        "title": "5 Common SIP Myths That Could Cost Indian Families Money",
+        "excerpt": "SIPs are powerful tools, but misconceptions about how they work lead to poor decisions. We address the five most common myths with clear explanations.",
+        "readTime": "5 min",
+        "date": "2024-11-05",
+        "coverEmoji": "💡"
+      },
+      {
+        "slug": "emergency-fund-guide",
+        "category": "Planning",
+        "title": "Building Your Emergency Fund: How Much is Enough?",
+        "excerpt": "An emergency fund is the most important financial tool most families overlook. Learn how to size yours correctly and where to keep it for safety and accessibility.",
+        "readTime": "4 min",
+        "date": "2024-10-22",
+        "coverEmoji": "🏦"
+      }
     ],
     "faqTitle": "Questions About Our Education Hub",
     "faqSubtitle": "Everything you need to know about our learning resources.",
     "faqItems": [
-      { "question": "Do I need to be financially literate before booking a consultation?", "answer": "Not at all. Our educational resources and consultations are designed to meet you where you are. Whether you're starting from zero or looking to deepen your knowledge, we tailor every interaction to your current understanding." },
-      { "question": "Are your educational resources free?", "answer": "Yes. All articles, guides, and educational content on this website are completely free. We believe financial education should be accessible to every Indian family, not gated behind a paywall." },
-      { "question": "How is this different from reading a personal finance blog?", "answer": "Our content is curated by SEBI-registered advisers for the Indian regulatory and market context — not generic advice copied from international sources. Everything is reviewed for accuracy and compliance. We also offer follow-up consultations if you want personalised guidance after reading." },
-      { "question": "What topics do your financial education sessions cover?", "answer": "We cover goal-setting, budgeting, mutual fund basics, insurance fundamentals, tax-efficient investing, estate planning, and more. Upcoming workshop topics are listed in our Resources section." }
+      {
+        "question": "Do I need to be financially literate before booking a consultation?",
+        "answer": "Not at all. Our educational resources and consultations are designed to meet you where you are. Whether you're starting from zero or looking to deepen your knowledge, we tailor every interaction to your current understanding."
+      },
+      {
+        "question": "Are your educational resources free?",
+        "answer": "Yes. All articles, guides, and educational content on this website are completely free. We believe financial education should be accessible to every Indian family, not gated behind a paywall."
+      },
+      {
+        "question": "How is this different from reading a personal finance blog?",
+        "answer": "Our content is curated by SEBI-registered advisers for the Indian regulatory and market context — not generic advice copied from international sources. Everything is reviewed for accuracy and compliance. We also offer follow-up consultations if you want personalised guidance after reading."
+      },
+      {
+        "question": "What topics do your financial education sessions cover?",
+        "answer": "We cover goal-setting, budgeting, mutual fund basics, insurance fundamentals, tax-efficient investing, estate planning, and more. Upcoming workshop topics are listed in our Resources section."
+      }
     ],
     "ctaTitle": "Ready to Move from Learning to Action?",
     "ctaSubtitle": "Once you feel confident in the basics, book a free consultation and we'll build a personalised plan together."
   },
   "invest": {
     "hero": {
-      "eyebrow": "SEBI Registered Investment Advisory",
+      "eyebrow": "Market Insights & Fund Facilitation",
       "headline": "Goal-Based Investing,",
       "headlineAccent": "Not Market Speculation",
       "subtext": "Structured, conflict-free investment advisory for Indian families. We build plans around your life — your goals, your timeline, your values — not market noise or product commissions.",
       "ctaLabel": "Book Investment Consultation",
       "secondaryCtaLabel": "Learn First"
     },
-    "regulatoryBanner": "Regulatory Disclosure: Investment in securities market is subject to market risks. Read all related documents carefully before investing. Past performance is not indicative of future returns. SEBI Reg. No. INA000XXXXXX.",
     "problem": {
       "heading": "The Problem with How Most People Invest",
       "para1": "Most Indians invest reactively — responding to market rallies, friend recommendations, or a persuasive distributor. Products are bought without understanding them; portfolios grow messy and directionless; and at the end, it's unclear whether you're actually on track for any real goal.",
       "para2": "Saarthi Finance brings structure to this chaos. We start with your goals — not with products. Every recommendation follows from a clear understanding of what you need, when you need it, and how much risk is genuinely appropriate for you."
     },
     "services": {
-      "heading": "What Our Investment Advisory Includes",
+      "heading": "What Our Market Insights Include",
       "items": [
         {
           "icon": "📋",
@@ -358,8 +484,8 @@
         },
         {
           "icon": "💡",
-          "title": "Mutual Fund Advisory",
-          "description": "Regulated advice on mutual funds under SEBI's RIA framework. Fund selection is based on consistency, expense ratios, fund house quality, and your specific needs."
+          "title": "Fund Facilitation",
+          "description": "Goal-aligned facilitation on mutual funds. Fund selection is based on consistency, expense ratios, fund house quality, and your specific needs."
         },
         {
           "icon": "⚖️",
@@ -406,7 +532,7 @@
       ]
     },
     "process": {
-      "title": "Our Investment Advisory Process",
+      "title": "Our Market Insights Process",
       "subtitle": "A structured, five-step process from understanding your goals to ongoing support.",
       "steps": [
         {
@@ -448,16 +574,16 @@
       "recover": "🔄 Portfolio Regularisation →"
     },
     "faq": {
-      "title": "Investment Advisory — Your Questions Answered",
+      "title": "Market Insights — Your Questions Answered",
       "subtitle": "Transparency is our policy. Here are answers to the questions we hear most often.",
       "items": [
         {
-          "question": "Is Saarthi Finance a SEBI-registered investment adviser?",
-          "answer": "Yes. Saarthi Finance is registered with SEBI as a Registered Investment Adviser (RIA) under SEBI (Investment Advisers) Regulations, 2013. Our SEBI registration number is INA000XXXXXX. You can verify this on the SEBI website."
+          "question": "What kind of financial platform is Saarthi Finance?",
+          "answer": "Saarthi Finance is a financial education and facilitation platform. We are not a SEBI-registered Investment Adviser or Portfolio Manager. We provide market insights, educational content, and asset facilitation services."
         },
         {
-          "question": "What is the difference between a SEBI RIA and a mutual fund distributor?",
-          "answer": "A SEBI RIA charges clients a fee for advice and is legally required to act in the client's best interest (fiduciary duty). A mutual fund distributor earns commissions from fund houses for selling products and does not have the same fiduciary obligation. At Saarthi Finance, we operate as a fee-only RIA — no commissions, no conflicts."
+          "question": "What is the difference between a financial educator and a mutual fund distributor?",
+          "answer": "A financial educator helps you understand financial products and build informed decision-making skills, without earning commissions. A mutual fund distributor earns commissions from fund houses for selling products. At Saarthi Finance, we operate as an education-first platform — helping you understand options without pushing products."
         },
         {
           "question": "Do you give advice on stocks or direct equity?",
@@ -465,7 +591,7 @@
         },
         {
           "question": "How much do your investment advisory services cost?",
-          "answer": "We operate on a transparent fee structure. Fees are either a flat annual advisory fee or a percentage of assets under advisory (AUA), as permitted by SEBI. Fees are disclosed in full before engagement. There are no hidden charges."
+          "answer": "We operate on a transparent fee structure for facilitation services. Fees are disclosed in full before any engagement. There are no hidden charges or commissions."
         },
         {
           "question": "Can you help me review my existing investments?",
@@ -480,11 +606,12 @@
     "cta": {
       "title": "Let's Build an Investment Plan for Your Family",
       "subtitle": "No products pitched. No returns promised. Just a clear conversation about your goals and how to reach them."
-    }
+    },
+    "educationalDisclaimer": "Educational Disclosure: All market insights are for informational purposes only. Investment in securities market is subject to market risks. Past performance is not indicative of future returns."
   },
   "protect": {
     "hero": {
-      "eyebrow": "IRDAI Authorised Insurance Advisory",
+      "eyebrow": "Insurance Education & Asset Facilitation",
       "headline": "Protect What Matters Most —",
       "headlineAccent": "Your Family",
       "subtext": "Honest, unbiased insurance advisory for Indian families. We assess your protection needs independently and help you choose the right cover — without being influenced by commission structures.",
@@ -549,11 +676,26 @@
     "whoNeeds": {
       "heading": "Who Needs Insurance Advisory?",
       "items": [
-        { "title": "Newly married couples", "text": "Starting a family requires term life review and health cover planning from the outset." },
-        { "title": "Parents with young children", "text": "Your cover must support your children's upbringing and education in your absence." },
-        { "title": "Home loan borrowers", "text": "Your sum assured must at minimum cover your outstanding home loan principal." },
-        { "title": "Families with ageing parents", "text": "Senior health cover planning requires specialist knowledge of available products." },
-        { "title": "Existing policyholders", "text": "If you've had policies for years but aren't sure what they cover — you need a review." }
+        {
+          "title": "Newly married couples",
+          "text": "Starting a family requires term life review and health cover planning from the outset."
+        },
+        {
+          "title": "Parents with young children",
+          "text": "Your cover must support your children's upbringing and education in your absence."
+        },
+        {
+          "title": "Home loan borrowers",
+          "text": "Your sum assured must at minimum cover your outstanding home loan principal."
+        },
+        {
+          "title": "Families with ageing parents",
+          "text": "Senior health cover planning requires specialist knowledge of available products."
+        },
+        {
+          "title": "Existing policyholders",
+          "text": "If you've had policies for years but aren't sure what they cover — you need a review."
+        }
       ],
       "underInsuredBox": {
         "heading": "The Cost of Being Under-Insured",
@@ -631,7 +773,7 @@
     "cta": {
       "title": "Is Your Family Adequately Protected?",
       "subtitle": "Book a free insurance needs assessment. We'll tell you exactly where your gaps are — honestly, without any sales pressure.",
-      "note": "No obligation · Independent advice · IRDAI Authorised"
+      "note": "No obligation · Education-first guidance · Asset facilitation"
     }
   },
   "recover": {
@@ -650,10 +792,26 @@
       "para3": "Our team specialises in navigating exactly this — IEPF claims, physical share dematerialisation, and transmission — so your family doesn't leave what is rightfully yours on the table."
     },
     "stats": [
-      { "number": "₹70,000+ Cr", "label": "Held in IEPF", "sub": "As of 2024" },
-      { "number": "11 Cr+", "label": "Shares Transferred", "sub": "To IEPF Authority" },
-      { "number": "7 Years", "label": "Trigger Period", "sub": "For unclaimed dividends" },
-      { "number": "90 Days", "label": "Official Timeline", "sub": "For claim processing" }
+      {
+        "number": "₹70,000+ Cr",
+        "label": "Held in IEPF",
+        "sub": "As of 2024"
+      },
+      {
+        "number": "11 Cr+",
+        "label": "Shares Transferred",
+        "sub": "To IEPF Authority"
+      },
+      {
+        "number": "7 Years",
+        "label": "Trigger Period",
+        "sub": "For unclaimed dividends"
+      },
+      {
+        "number": "90 Days",
+        "label": "Official Timeline",
+        "sub": "For claim processing"
+      }
     ],
     "iepfProcess": {
       "title": "IEPF Claim Process — Step by Step",
@@ -775,7 +933,7 @@
         },
         {
           "question": "Can physical share certificates still be dematerialised?",
-          "answer": "Yes. Physical share certificates are valid documents and can be dematerialised. Since April 2019, SEBI mandated that shares can only be transferred in demat form for listed companies. Dematerialisation is therefore essential if you want to sell, gift, or pledge your shares. We handle the complete DRF (Demat Request Form) submission process."
+          "answer": "Yes. Physical share certificates are valid documents and can be dematerialised. Since April 2019, demat is mandated for transfers of listed company shares. Dematerialisation is therefore essential if you want to sell, gift, or pledge your shares. We handle the complete DRF (Demat Request Form) submission process."
         },
         {
           "question": "What are your fees for IEPF claim assistance?",
@@ -805,10 +963,22 @@
       "para2": "Saarthi Finance was built to change that. We believe every Indian family — regardless of wealth level — deserves structured, transparent, and genuinely conflict-free financial guidance.",
       "para3": "The word \"Saarthi\" means charioteer in Sanskrit — one who guides, protects, and navigates. It captures exactly how we see our role: not to make decisions for you, but to give you the knowledge and structure to make the right ones yourself.",
       "stats": [
-        { "number": "6+", "label": "Years of Operation" },
-        { "number": "300+", "label": "Client Families Served" },
-        { "number": "200+", "label": "Recovery Cases Resolved" },
-        { "number": "₹50 Cr+", "label": "Assets Under Advisory" }
+        {
+          "number": "6+",
+          "label": "Years of Operation"
+        },
+        {
+          "number": "300+",
+          "label": "Client Families Served"
+        },
+        {
+          "number": "200+",
+          "label": "Recovery Cases Resolved"
+        },
+        {
+          "number": "₹50 Cr+",
+          "label": "Assets Under Advisory"
+        }
       ]
     },
     "values": {
@@ -854,14 +1024,14 @@
         {
           "name": "Arun Sharma",
           "role": "Founder & Principal Adviser",
-          "credentials": "CFP® · SEBI RIA · MBA Finance",
+          "credentials": "CFP® · Financial Educator · MBA Finance",
           "bio": "15+ years in financial services. Former wealth manager at a leading private bank. Founded Saarthi Finance to build a genuinely conflict-free advisory firm for Indian middle-class families.",
           "initials": "AS"
         },
         {
           "name": "Priya Mehta",
           "role": "Senior Financial Planner",
-          "credentials": "CFP® · AMFI ARN Holder",
+          "credentials": "CFP® · Certified Financial Planner",
           "bio": "10 years of goal-based financial planning experience. Specialises in family financial planning, child education planning, and retirement corpus building.",
           "initials": "PM"
         },
@@ -877,12 +1047,30 @@
     "journey": {
       "heading": "Our Journey",
       "milestones": [
-        { "year": "2018", "event": "Founded with a focus on fee-only advisory for Indian families" },
-        { "year": "2019", "event": "Obtained SEBI Investment Adviser Registration (INA000XXXXXX)" },
-        { "year": "2020", "event": "Launched IEPF Recovery specialisation service" },
-        { "year": "2021", "event": "Crossed 200 active client families" },
-        { "year": "2022", "event": "Obtained IRDAI POSP authorisation for insurance advisory" },
-        { "year": "2024", "event": "Expanded team; launched educational content hub" }
+        {
+          "year": "2018",
+          "event": "Founded with a focus on fee-only advisory for Indian families"
+        },
+        {
+          "year": "2019",
+          "event": "Launched as a financial education and facilitation platform"
+        },
+        {
+          "year": "2020",
+          "event": "Launched IEPF Recovery specialisation service"
+        },
+        {
+          "year": "2021",
+          "event": "Crossed 200 active client families"
+        },
+        {
+          "year": "2022",
+          "event": "Obtained IRDAI POSP authorisation for insurance advisory"
+        },
+        {
+          "year": "2024",
+          "event": "Expanded team; launched educational content hub"
+        }
       ]
     },
     "trust": {
@@ -899,7 +1087,7 @@
       "eyebrow": "Book a Free Consultation",
       "headline": "Let's Talk About",
       "headlineAccent": "Your Financial Future",
-      "subtext": "A free, no-obligation 30–45 minute conversation with a SEBI-registered adviser. We listen first, explain clearly, and recommend only when we understand your situation.",
+      "subtext": "A free, no-obligation 30–45 minute conversation with our financial educators. We listen first, explain clearly, and recommend only when we understand your situation.",
       "ctaLabel": "Jump to Booking Form"
     },
     "consultationTypes": {
@@ -949,14 +1137,14 @@
     "directContact": {
       "heading": "Prefer to Reach Directly?",
       "address": "Saarthi Finance Advisory LLP\n[Office Address]\nMumbai, Maharashtra 400001",
-      "regulatoryTitle": "Regulatory Registration",
-      "regulatoryDetails": "SEBI Reg. No. INA000XXXXXX\nAMFI ARN: XXXXXXX\nIRDAI POSP: XXXXXXXX",
-      "grievanceNote": "For grievances: SEBI SCORES Portal at scores.gov.in",
+      "regulatoryTitle": "Platform Information",
+      "regulatoryDetails": "Educational & Facilitation Platform\nFinancial Education · Market Insights\nAsset Facilitation · Wealth Frameworks",
+      "grievanceNote": "For concerns: hello@saarthi-finance.in or +91 98765 43210",
       "viewCompliance": "View full compliance & disclosures"
     },
     "trust": {
-      "title": "Regulated at Every Step",
-      "subtitle": "Your consultation is conducted by SEBI-registered advisers operating within full regulatory compliance."
+      "title": "Transparent at Every Step",
+      "subtitle": "Your consultation is conducted by financial educators committed to transparency and your best interests."
     },
     "formLabels": {
       "firstName": "First Name",
@@ -1008,12 +1196,36 @@
       "count": "articles across",
       "topicAreas": "topic areas.",
       "categories": [
-        { "label": "All Articles", "value": "all", "count": 18 },
-        { "label": "Planning Basics", "value": "planning", "count": 5 },
-        { "label": "Mutual Funds", "value": "mf", "count": 4 },
-        { "label": "Insurance", "value": "insurance", "count": 3 },
-        { "label": "Recover & IEPF", "value": "recover", "count": 4 },
-        { "label": "Tax & Legal", "value": "tax", "count": 2 }
+        {
+          "label": "All Articles",
+          "value": "all",
+          "count": 18
+        },
+        {
+          "label": "Planning Basics",
+          "value": "planning",
+          "count": 5
+        },
+        {
+          "label": "Mutual Funds",
+          "value": "mf",
+          "count": 4
+        },
+        {
+          "label": "Insurance",
+          "value": "insurance",
+          "count": 3
+        },
+        {
+          "label": "Recover & IEPF",
+          "value": "recover",
+          "count": 4
+        },
+        {
+          "label": "Tax & Legal",
+          "value": "tax",
+          "count": 2
+        }
       ],
       "items": [
         {
@@ -1106,7 +1318,7 @@
     },
     "cta": {
       "title": "Have a Specific Financial Question?",
-      "subtitle": "Book a free consultation and ask our SEBI-registered advisers directly — no charge for the first session."
+      "subtitle": "Book a free consultation and ask our financial educators directly — no charge for the first session."
     }
   }
 }

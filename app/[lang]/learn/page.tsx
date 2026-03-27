@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSection from "@/components/HeroSection";
+import InfiniteTrustTicker from "@/components/InfiniteTrustTicker";
 import ArticleCard from "@/components/ArticleCard";
 import CTASection from "@/components/CTASection";
 import FAQAccordion from "@/components/FAQAccordion";
@@ -48,6 +49,9 @@ export default async function LearnPage({
         secondaryCtaHref={`/${lang}/contact`}
         showTrustBadges={false}
       />
+
+      {/* ── Lifecycle Mission Trust Ticker ── */}
+      <InfiniteTrustTicker />
 
       {/* Why financial education matters */}
       <section className="section-padding bg-dark-surface" aria-labelledby="why-learn-heading">

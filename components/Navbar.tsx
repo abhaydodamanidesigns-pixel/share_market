@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Dictionary } from "@/src/dictionaries";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const SUPPORTED_LOCALES = ["en", "hi", "kn"];
 const DEFAULT_LOCALE = "en";
@@ -26,12 +27,12 @@ export default function Navbar({
       : DEFAULT_LOCALE);
 
   const navLinks = [
-    { path: "/learn", label: dict.nav.learn },
-    { path: "/invest", label: dict.nav.invest },
-    { path: "/protect", label: dict.nav.protect },
-    { path: "/recover", label: dict.nav.recover },
+    { path: "/learn",     label: dict.nav.learn     },
+    { path: "/invest",    label: dict.nav.invest    },
+    { path: "/protect",   label: dict.nav.protect   },
+    { path: "/recover",   label: dict.nav.recover   },
     { path: "/resources", label: dict.nav.resources },
-    { path: "/about", label: dict.nav.about },
+    { path: "/about",     label: dict.nav.about     },
   ];
 
   useEffect(() => {
@@ -40,40 +41,53 @@ export default function Navbar({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     setIsMobileOpen(false);
   }, [pathname]);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={[
+        "fixed top-0 left-0 right-0 z-50",
+        /* Premium glassmorphism: bg uses CSS var so it adapts to light/dark */
+        "transition-all duration-300",
         isScrolled
-          ? "bg-dark-bg/95 backdrop-blur-md shadow-nav"
-          : "bg-dark-bg/90 backdrop-blur-sm"
-      }`}
+          ? "backdrop-blur-[12px] shadow-[var(--shadow-nav)] border-b"
+          : "backdrop-blur-[6px]",
+      ].join(" ")}
+      style={{
+        backgroundColor: isScrolled
+          ? "var(--nav-bg)"
+          : "transparent",
+        borderBottomColor: isScrolled ? "var(--nav-border)" : "transparent",
+      }}
       role="banner"
     >
       <nav
-        className="container-base flex items-center justify-between h-16 md:h-18"
+        className="container-base flex items-center justify-between h-16 md:h-[4.5rem]"
         aria-label="Main navigation"
       >
-        {/* Brand / Logo */}
+        {/* ── Brand / Logo ── */}
         <Link
           href={`/${locale}`}
-          className="flex items-center gap-2.5 group"
+          className="flex items-center gap-2.5 group flex-shrink-0"
           aria-label={dict.common.homeAriaLabel}
         >
-          {/* Logo mark */}
-          <span className="flex items-center justify-center w-9 h-9 rounded-xl bg-brand text-white font-bold text-base group-hover:bg-brand-hover transition-colors">
+          <span
+            className="flex items-center justify-center w-9 h-9 rounded-xl font-bold text-base text-white transition-all duration-200 group-hover:scale-105"
+            style={{ backgroundColor: "var(--brand)" }}
+          >
             S
           </span>
-          <span className="font-bold text-lg text-ink tracking-tight whitespace-nowrap">
+          <span
+            className="font-bold text-lg tracking-tight whitespace-nowrap"
+            style={{ color: "var(--text-primary)" }}
+          >
             {dict.common.brandName}
           </span>
         </Link>
 
-        {/* Desktop links */}
+        {/* ── Desktop nav links ── */}
         <ul className="hidden xl:flex items-center gap-1 flex-shrink-0" role="list">
           {navLinks.map(({ path, label }) => {
             const href = `/${locale}${path}`;
@@ -83,11 +97,29 @@ export default function Navbar({
               <li key={path}>
                 <Link
                   href={href}
-                  className={`whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={[
+                    "whitespace-nowrap px-3 py-2 rounded-lg text-sm font-medium",
+                    "transition-all duration-200",
                     isActive
-                      ? "text-brand bg-dark-card font-semibold"
-                      : "text-ink-dim hover:text-ink hover:bg-dark-hover"
-                  }`}
+                      ? "font-semibold"
+                      : "",
+                  ].join(" ")}
+                  style={{
+                    color: isActive ? "var(--brand)" : "var(--text-secondary)",
+                    backgroundColor: isActive ? "var(--surface-hover)" : "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-primary)";
+                      (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "var(--surface-hover)";
+                    }
+                  }}
+                  onMouseLeave={(e) => {
+                    if (!isActive) {
+                      (e.currentTarget as HTMLAnchorElement).style.color = "var(--text-secondary)";
+                      (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
+                    }
+                  }}
                   aria-current={isActive ? "page" : undefined}
                 >
                   {label}
@@ -97,9 +129,13 @@ export default function Navbar({
           })}
         </ul>
 
-        {/* Desktop CTA + Language */}
+        {/* ── Desktop: Theme toggle + Language + CTA ── */}
         <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
-          <LanguageSwitcher currentLocale={locale} className="flex items-center gap-0.5 shrink-0" />
+          <ThemeToggle />
+          <LanguageSwitcher
+            currentLocale={locale}
+            className="flex items-center gap-0.5 shrink-0"
+          />
           <Link
             href={`/${locale}/contact`}
             className="btn-accent text-sm px-5 py-2.5 whitespace-nowrap shrink-0"
@@ -108,58 +144,50 @@ export default function Navbar({
           </Link>
         </div>
 
-        {/* Mobile hamburger */}
-        <button
-          className="xl:hidden p-2 rounded-lg text-ink hover:bg-dark-hover transition-colors"
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          aria-expanded={isMobileOpen}
-          aria-controls="mobile-menu"
-          aria-label={isMobileOpen ? dict.common.closeMenu : dict.common.openMenu}
-        >
-          <span className="sr-only">
-            {isMobileOpen ? dict.common.closeMenu : dict.common.openMenu}
-          </span>
-          {isMobileOpen ? (
-            /* Close icon */
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            /* Hamburger icon */
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
+        {/* ── Mobile: Theme toggle + Hamburger ── */}
+        <div className="xl:hidden flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            className="p-2 rounded-lg transition-colors duration-200"
+            style={{ color: "var(--text-primary)" }}
+            onMouseEnter={(e) =>
+              ((e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                "var(--surface-hover)")
+            }
+            onMouseLeave={(e) =>
+              ((e.currentTarget as HTMLButtonElement).style.backgroundColor =
+                "transparent")
+            }
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            aria-expanded={isMobileOpen}
+            aria-controls="mobile-menu"
+            aria-label={isMobileOpen ? dict.common.closeMenu : dict.common.openMenu}
+          >
+            <span className="sr-only">
+              {isMobileOpen ? dict.common.closeMenu : dict.common.openMenu}
+            </span>
+            {isMobileOpen ? (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile menu */}
+      {/* ── Mobile menu ── */}
       {isMobileOpen && (
         <div
           id="mobile-menu"
-          className="xl:hidden bg-dark-surface border-t border-dark-border shadow-lg"
+          className="xl:hidden border-t shadow-lg"
+          style={{
+            backgroundColor: "var(--bg-secondary)",
+            borderColor: "var(--border)",
+          }}
           role="dialog"
           aria-label="Mobile navigation"
         >
@@ -172,11 +200,12 @@ export default function Navbar({
                 <li key={path}>
                   <Link
                     href={href}
-                    className={`block px-4 py-2.5 rounded-xl text-sm font-medium transition-colors ${
-                      isActive
-                        ? "text-brand bg-dark-card font-semibold"
-                        : "text-ink-dim hover:bg-dark-hover"
-                    }`}
+                    className="block px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200"
+                    style={{
+                      color: isActive ? "var(--brand)" : "var(--text-secondary)",
+                      backgroundColor: isActive ? "var(--surface-hover)" : "transparent",
+                      fontWeight: isActive ? "600" : "500",
+                    }}
                     aria-current={isActive ? "page" : undefined}
                   >
                     {label}
@@ -185,7 +214,7 @@ export default function Navbar({
               );
             })}
 
-            <li className="pt-2 border-t border-dark-border mt-2">
+            <li className="pt-2 mt-2" style={{ borderTop: "1px solid var(--border)" }}>
               <LanguageSwitcher currentLocale={locale} className="flex items-center gap-0.5 mb-3" />
               <Link
                 href={`/${locale}/contact`}

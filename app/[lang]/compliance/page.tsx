@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Compliance & Disclosures — SEBI, IRDAI & Regulatory Information",
+  title: "Legal Disclosures & Compliance — Saarthi Finance",
   description:
-    "Saarthi Finance compliance and disclosure page. SEBI registration details, SEBI RIA disclosures, IRDAI POSP information, privacy policy, terms of use, and grievance redressal mechanism.",
+    "Saarthi Finance legal disclosures and compliance page. Platform information, educational disclaimer, privacy policy, terms of use, and grievance redressal. We are an educational and facilitation platform.",
 };
 
 const sections = [
-  { id: "sebi", label: "SEBI Disclosures" },
+  { id: "sebi", label: "Platform Disclosures" },
   { id: "irdai", label: "IRDAI & Insurance" },
   { id: "risks", label: "Risk Disclosures" },
   { id: "fees", label: "Fee Disclosures" },
@@ -74,33 +74,33 @@ export default function CompliancePage({
             className="lg:col-span-3 space-y-12"
             aria-label="Compliance and disclosure content"
           >
-            {/* ── SEBI Disclosures ── */}
+            {/* ── Platform Disclosures ── */}
             <article id="sebi" className="scroll-mt-24">
               <h2 className="text-2xl font-bold text-ink mb-4 pb-3 border-b border-dark-border">
-                SEBI Disclosures
+                Platform Disclosures
               </h2>
 
               <div className="bg-dark-card border border-dark-border rounded-2xl p-5 mb-5">
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 text-sm">
                   <div>
-                    <p className="text-xs text-ink-muted mb-0.5">SEBI Registration Number</p>
-                    <p className="font-bold text-ink">INA000XXXXXX</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Platform Type</p>
+                    <p className="font-bold text-ink">Financial Education & Facilitation</p>
                   </div>
                   <div>
-                    <p className="text-xs text-ink-muted mb-0.5">Registration Type</p>
-                    <p className="font-bold text-ink">Individual / Non-Individual</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Services Offered</p>
+                    <p className="font-bold text-ink">Education · Insights · Facilitation</p>
                   </div>
                   <div>
-                    <p className="text-xs text-ink-muted mb-0.5">Valid Till</p>
-                    <p className="font-bold text-ink">Perpetual (post 2020)</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Regulatory Status</p>
+                    <p className="font-bold text-ink">Not a SEBI-registered RIA</p>
                   </div>
                   <div>
                     <p className="text-xs text-ink-muted mb-0.5">Registered Name</p>
                     <p className="font-bold text-ink">Saarthi Finance Advisory LLP</p>
                   </div>
                   <div>
-                    <p className="text-xs text-ink-muted mb-0.5">AMFI ARN</p>
-                    <p className="font-bold text-ink">XXXXXXX</p>
+                    <p className="text-xs text-ink-muted mb-0.5">Content Nature</p>
+                    <p className="font-bold text-ink">Informational & Educational Only</p>
                   </div>
                   <div>
                     <p className="text-xs text-ink-muted mb-0.5">Registered Address</p>
@@ -110,39 +110,27 @@ export default function CompliancePage({
               </div>
 
               <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
-                <p>
-                  Saarthi Finance Advisory LLP is registered with the Securities and
-                  Exchange Board of India (SEBI) as a Registered Investment Adviser
-                  (RIA) under the SEBI (Investment Advisers) Regulations, 2013. The
-                  registration can be verified on the SEBI website at{" "}
-                  <a
-                    href="https://www.sebi.gov.in"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-brand underline"
-                  >
-                    www.sebi.gov.in
-                  </a>
-                  .
+                <p className="p-4 rounded-xl bg-dark-elevated border border-dark-border text-ink font-medium">
+                  We are an educational and facilitation platform. We are <strong>not</strong> a
+                  SEBI-registered Investment Adviser or Portfolio Manager. All market insights and
+                  content on this platform are for informational and educational purposes only and
+                  do not constitute investment advice.
                 </p>
                 <p>
-                  As a SEBI Registered Investment Adviser, Saarthi Finance is bound by
-                  the provisions of the SEBI (Investment Advisers) Regulations, 2013,
-                  and subsequent amendments. This includes maintaining fiduciary duty
-                  towards clients, separating advisory and distribution activities,
-                  maintaining adequate qualifications and experience, and operating
-                  within the prescribed code of conduct.
+                  Saarthi Finance provides financial education, market insights, and asset
+                  facilitation services to help Indian families make informed financial decisions.
+                  Users should consult a qualified, SEBI-registered financial adviser before
+                  making any investment decisions.
                 </p>
                 <p>
-                  Investment advice provided by Saarthi Finance is based on analysis
-                  of each client&apos;s individual risk profile, financial situation, and
-                  investment objectives. Past performance of any recommended product is
-                  not indicative of future results.
+                  All content reflects the views and educational materials of Saarthi Finance and
+                  is based on publicly available information. Past performance of any financial
+                  product is not indicative of future results.
                 </p>
                 <p>
-                  <strong className="text-ink">Applicable Regulation:</strong> SEBI (Investment Advisers)
-                  Regulations, 2013; SEBI Circular No. SEBI/HO/IMD/DF1/CIR/P/2020/182
-                  dated September 23, 2020, and subsequent circulars.
+                  <strong className="text-ink">Applicable Framework:</strong> All facilitation
+                  activities are conducted within applicable Indian laws and regulations. Users
+                  are encouraged to independently verify all information before acting on it.
                 </p>
               </div>
             </article>
@@ -154,10 +142,10 @@ export default function CompliancePage({
               </h2>
               <div className="space-y-4 text-sm text-ink-dim leading-relaxed">
                 <p>
-                  Insurance advisory services are facilitated by Saarthi Finance
-                  Advisory LLP as an IRDAI-authorised Point of Salesperson (POSP). Our
-                  POSP code is XXXXXXXX. We are authorised to facilitate life and
-                  general insurance products from registered insurers under IRDAI.
+                  Insurance facilitation services are provided by Saarthi Finance
+                  Advisory LLP for informational and educational purposes. Users should
+                  consult a licensed insurance adviser before making any insurance decisions.
+                  All insurance-related content is for educational purposes only.
                 </p>
                 <p>
                   <strong className="text-ink">Important:</strong> Insurance is a subject matter of
